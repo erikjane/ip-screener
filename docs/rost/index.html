@@ -112,6 +112,18 @@ body.club #btnFull{display:inline-block}
  th,td{padding:6px 6px;font-size:12px}
  button{padding:7px 10px}
 }
+
+.lnkrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lnkrow .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-right:4px}
+.lnk{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--navy);text-decoration:none;font-size:13px;font-weight:500;line-height:18px}
+.lnk:hover{border-color:var(--blue);color:var(--blue)}
+.lnk.cur{background:var(--blue);border-color:var(--blue);color:#fff;cursor:default}
+.lnk.risk{border-color:var(--navy)}
+.switch{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.attn{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--border);border-left:6px solid var(--lime);border-radius:12px;padding:12px 16px;margin-bottom:14px;color:var(--navy);font-size:14px;line-height:20px}
+.attn b{font-weight:700}
+.learn .lnkrow+.lnkrow{margin-top:10px}
+@media(max-width:600px){.lnk{padding:6px 10px;font-size:12px}.attn{font-size:13px;padding:10px 12px}}
 </style>
 </head>
 <body>
@@ -134,6 +146,7 @@ body.club #btnFull{display:inline-block}
   <div id="msg"></div>
 
   <section id="t-overview">
+    <div class="switch"><div class="lnkrow"><span class="lbl">Стратегии</span><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=350825077&editMode=0" target="_top">Акции на купоны</a><span class="lnk cur">Рост и доход</span><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=350825211&editMode=0" target="_top">Купонный профит</a></div><div class="lnkrow"><a class="lnk risk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=345529623&editMode=0" target="_top">🧭 Определить свой риск-профиль</a></div></div>
     <div class="card strat" style="margin-bottom:14px">
       <div class="st-i"><div class="l">Дата начала ведения стратегии</div><div class="v">2 августа 2024 г.</div></div>
       <div class="st-i"><div class="l">Риск-профиль</div><div class="v">Умеренно-агрессивный</div><div class="s">умеренно-консервативный при сочетании стратегий с облигациями</div></div>
@@ -147,6 +160,7 @@ body.club #btnFull{display:inline-block}
     </div>
     <div class="card" style="margin-top:14px"><h3>Стоимость портфеля и внесённые средства</h3><div style="height:320px"><canvas id="chLog"></canvas></div></div>
     <div class="card" style="margin-top:14px"><h3>По секторам</h3><div style="height:260px"><canvas id="chSect"></canvas></div></div>
+    <div class="card learn" style="margin-top:14px"><h3>Полезные материалы</h3><div class="lnkrow"><span class="lbl">Аналитика</span><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=338254769&editMode=0" target="_top">📊 Аналитика по акциям</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=338255157&editMode=0" target="_top">📊 Аналитика по отраслям</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=277834847&editMode=0" target="_top">📊 Дивидендный прогноз</a></div><div class="lnkrow"><span class="lbl">Обучение по теме</span><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=342333254&editMode=0" target="_top">🎓 Отбор дивидендных компаний</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=342893177&editMode=0" target="_top">🎓 Разбор сектора ретейл</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=350369489&editMode=0" target="_top">🎓 Специфика анализа банковской отрасли</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=348387637&editMode=0" target="_top">🎓 Хеджирование сделок через фьючерс</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=340072721&editMode=0" target="_top">🎓 Шорт — игра на понижение</a><a class="lnk" href="https://investprivet.ru/pl/teach/control/lesson/view?id=341161710&editMode=0" target="_top">🎓 Кредитное плечо</a></div></div>
   </section>
 
   <section id="t-positions" class="hide">

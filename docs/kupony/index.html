@@ -123,6 +123,18 @@ body.club #btnFull{display:inline-block}
  th,td{padding:6px 6px;font-size:12px}
  button{padding:7px 10px}
 }
+
+.lnkrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lnkrow .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-right:4px}
+.lnk{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--navy);text-decoration:none;font-size:13px;font-weight:500;line-height:18px}
+.lnk:hover{border-color:var(--blue);color:var(--blue)}
+.lnk.cur{background:var(--blue);border-color:var(--blue);color:#fff;cursor:default}
+.lnk.risk{border-color:var(--navy)}
+.switch{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.attn{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--border);border-left:6px solid var(--lime);border-radius:12px;padding:12px 16px;margin-bottom:14px;color:var(--navy);font-size:14px;line-height:20px}
+.attn b{font-weight:700}
+.learn .lnkrow+.lnkrow{margin-top:10px}
+@media(max-width:600px){.lnk{padding:6px 10px;font-size:12px}.attn{font-size:13px;padding:10px 12px}}
 </style>
 </head>
 <body>
@@ -146,6 +158,7 @@ body.club #btnFull{display:inline-block}
   <div class="krate" id="krate"></div>
 
   <section id="t-overview">
+    <div id="switchBox"></div>
     <div class="card strat" id="strat" style="margin-bottom:14px"></div>
     <div class="grid k4" id="kpis"></div>
     <div class="grid k4b" id="kpis2" style="margin-top:14px"></div>
@@ -156,9 +169,11 @@ body.club #btnFull{display:inline-block}
     <div class="card" style="margin-top:14px"><h3>Купоны по месяцам на 12 месяцев вперёд</h3><div style="height:260px"><canvas id="chCoupOv"></canvas></div><div class="fn" id="coupOvNote"></div></div>
     <div class="card" style="margin-top:14px"><h3>Стоимость портфеля и внесённые средства</h3><div id="histBox"><div style="height:300px"><canvas id="chHist"></canvas></div></div><div class="fn" id="histNote"></div></div>
     <div class="fn" id="sbNote1" style="margin-top:14px"></div>
+    <div id="learnBox"></div>
   </section>
 
   <section id="t-positions" class="hide">
+    <div class="attn" id="attnBuy"><span style="font-size:20px">⚠️</span><div><b>Внимание!</b> При покупке обращайте внимание на цену: покупка только лимитированными заявками.</div></div>
     <div class="card"><h3>Облигации</h3><div class="muted" style="font-size:13px;margin:-4px 0 12px">Доходность — актуальная эффективная доходность по текущей цене на Московской бирже: если покупать облигацию сейчас, а не по нашей цене покупки. Считается к оферте, если она есть, иначе к погашению. Обновляется при каждом открытии страницы; в выходные — по цене закрытия последних торгов.</div><div class="tw" id="bondTable" style="max-height:none"></div>
       <div class="fn">* Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению.<br>* <span class="tag fl">плавающий купон</span> — купон привязан к ключевой ставке или RUONIA; доходность рассчитана исходя из текущего купона и изменится вместе со ставкой.<br>* Изменение цены — от средней цены покупки, без учёта купонов. Полная доходность учитывает полученные купоны (Snowball).</div>
     </div>
@@ -244,7 +259,9 @@ const CFG = {
  "bench": {
   "code": "MCFTR",
   "name": "индекс Мосбиржи полной доходности"
- }
+ },
+ "switchHtml": "<div class=\"switch\"><div class=\"lnkrow\"><span class=\"lbl\">Стратегии</span><span class=\"lnk cur\">Акции на купоны</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350821293&editMode=0\" target=\"_top\">Рост и доход</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350825211&editMode=0\" target=\"_top\">Купонный профит</a></div><div class=\"lnkrow\"><a class=\"lnk risk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345529623&editMode=0\" target=\"_top\">🧭 Определить свой риск-профиль</a></div></div>",
+ "learnHtml": "<div class=\"card learn\" style=\"margin-top:14px\"><h3>Полезные материалы</h3><div class=\"lnkrow\"><span class=\"lbl\">Обзоры</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349024524&editMode=0\" target=\"_top\">📊 Обзоры по облигациям</a></div><div class=\"lnkrow\"><span class=\"lbl\">Обучение по теме</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=316068107&editMode=0\" target=\"_top\">🎓 Как оценить эмитента облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=340640770&editMode=0\" target=\"_top\">🎓 Заявки на фондовом рынке</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=343337766&editMode=0\" target=\"_top\">🎓 Расчёт доходности облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345525711&editMode=0\" target=\"_top\">🎓 Стратегии работы с облигациями</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349585962&editMode=0\" target=\"_top\">🎓 ВДО: как работать с облигациями</a></div></div>"
 };
 /*CFG-END*/
 const START = CFG.start;
@@ -544,7 +561,9 @@ function renderStatic(){
   $('#txTab').textContent=deals?'Сделки':'Покупки'; $('#txH1').textContent=deals?'Сделки по месяцам':'Покупки по месяцам';
   $('#txH2').textContent=deals?'Все сделки':'Все покупки по текущим позициям';
   $('#txNote').textContent=`Источник: лист «${CFG.sheets.tx}». Цена облигаций — в % от номинала.`;
-  $('#refSrc').textContent=`Источник: лист «${CFG.sheets.ref}».`; }
+  $('#refSrc').textContent=`Источник: лист «${CFG.sheets.ref}».`;
+  $('#switchBox').innerHTML=CFG.switchHtml||''; $('#learnBox').innerHTML=CFG.learnHtml||'';
+}
 renderStatic();
 function renderKey(){ const it=P.it;
   $('#krate').innerHTML = isFinite(it.key)?`<span class="kl">Текущая ключевая ставка ЦБ</span><span class="kv">${fmt(it.key,2)}%</span>`+
