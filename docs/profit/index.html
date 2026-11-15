@@ -102,6 +102,8 @@ body.pos-compact td.c-name{white-space:normal;min-width:150px;max-width:200px}
 body.pos-compact td.c-name .tag{margin:3px 4px 0 0!important}
 body.pos-compact td.c-date{white-space:normal;min-width:84px;max-width:110px}
 body.pos-compact td.c-rt{white-space:normal;max-width:80px}
+body.pos-compact td.c-y{white-space:normal;min-width:90px;max-width:110px}
+body.pos-compact #bondTable{font-size:13px}
 body.ref-compact #refTable th,body.ref-compact #refTable td{padding:7px 8px}
 body.ref-compact #refTable td.c-name{white-space:normal;min-width:150px;max-width:200px}
 body.ref-compact #refTable td.c-name .tag{margin:3px 4px 0 0!important}
@@ -274,6 +276,8 @@ const CFG = {
   "code": "RGBITR",
   "name": "индекс государственных облигаций полной доходности"
  },
+ "compactRef": true,
+ "compactPos": true,
  "switchHtml": "<div class=\"switch\"><div class=\"lnkrow\"><span class=\"lbl\">Стратегии</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350825077&editMode=0\" target=\"_top\">Акции на купоны</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350821293&editMode=0\" target=\"_top\">Рост и доход</a><span class=\"lnk cur\">Купонный профит</span></div><div class=\"lnkrow\"><a class=\"lnk risk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345529623&editMode=0\" target=\"_top\">🧭 Определить свой риск-профиль</a></div></div>",
  "learnHtml": "<div class=\"card learn\" style=\"margin-top:14px\"><h3>Полезные материалы</h3><div class=\"lnkrow\"><span class=\"lbl\">Обзоры</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349024524&editMode=0\" target=\"_top\">📊 Обзоры по облигациям</a></div><div class=\"lnkrow\"><span class=\"lbl\">Обучение по теме</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=316068107&editMode=0\" target=\"_top\">🎓 Как оценить эмитента облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=340640770&editMode=0\" target=\"_top\">🎓 Заявки на фондовом рынке</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=343337766&editMode=0\" target=\"_top\">🎓 Расчёт доходности облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345525711&editMode=0\" target=\"_top\">🎓 Стратегии работы с облигациями</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349585962&editMode=0\" target=\"_top\">🎓 ВДО: как работать с облигациями</a></div></div>"
 };
@@ -632,7 +636,7 @@ function renderPositions(){
     {k:'nkd',h:'НКД, ₽',f:o=>fmt(o.nkd*(isFinite(o.fx)?o.fx:1),2)},
     {k:'val',h:'Стоимость, ₽',f:o=>fmt(o.val)},
     {k:'share',h:'Доля',f:o=>fmt(o.share,2)+'%'},
-    {k:'y',h:'Доходность',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
+    {k:'y',h:'Доходность',c:'c-y',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
     {k:'_date',h:'Оферта / погашение',c:'c-date',f:o=>o.offer?`оферта ${ruDate(o.offer)}<span class="sub">погаш. ${ruDate(o.mat)}</span>`:ruDate(o.mat)},
     {k:'dur',h:'Дюрация, лет',f:o=>fmt(o.dur,2)},
     {k:'_rate',h:'Рейтинг*',l:1,c:'c-rt',f:o=>esc(o._rate)},

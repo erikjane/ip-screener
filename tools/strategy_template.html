@@ -102,6 +102,8 @@ body.pos-compact td.c-name{white-space:normal;min-width:150px;max-width:200px}
 body.pos-compact td.c-name .tag{margin:3px 4px 0 0!important}
 body.pos-compact td.c-date{white-space:normal;min-width:84px;max-width:110px}
 body.pos-compact td.c-rt{white-space:normal;max-width:80px}
+body.pos-compact td.c-y{white-space:normal;min-width:90px;max-width:110px}
+body.pos-compact #bondTable{font-size:13px}
 body.ref-compact #refTable th,body.ref-compact #refTable td{padding:7px 8px}
 body.ref-compact #refTable td.c-name{white-space:normal;min-width:150px;max-width:200px}
 body.ref-compact #refTable td.c-name .tag{margin:3px 4px 0 0!important}
@@ -605,7 +607,7 @@ function renderPositions(){
     {k:'nkd',h:'НКД, ₽',f:o=>fmt(o.nkd*(isFinite(o.fx)?o.fx:1),2)},
     {k:'val',h:'Стоимость, ₽',f:o=>fmt(o.val)},
     {k:'share',h:'Доля',f:o=>fmt(o.share,2)+'%'},
-    {k:'y',h:'Доходность',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
+    {k:'y',h:'Доходность',c:'c-y',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
     {k:'_date',h:'Оферта / погашение',c:'c-date',f:o=>o.offer?`оферта ${ruDate(o.offer)}<span class="sub">погаш. ${ruDate(o.mat)}</span>`:ruDate(o.mat)},
     {k:'dur',h:'Дюрация, лет',f:o=>fmt(o.dur,2)},
     {k:'_rate',h:'Рейтинг*',l:1,c:'c-rt',f:o=>esc(o._rate)},
