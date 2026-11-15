@@ -96,6 +96,13 @@ body.club #btnSettings,body.club #btnReload{display:none!important}
 .fn{font-size:12px;color:var(--muted);margin-top:8px;line-height:18px}
 .tag{display:inline-block;padding:1px 6px;border-radius:6px;font-size:11px;font-weight:600;background:#E0E8FF;color:var(--blue);margin-left:6px;white-space:nowrap}
 .tag.fl{background:#FEF3C7;color:#92400E}
+body.ref-compact #refTable th,body.ref-compact #refTable td{padding:7px 8px}
+body.ref-compact #refTable td.c-name{white-space:normal;min-width:150px;max-width:200px}
+body.ref-compact #refTable td.c-name .tag{margin:3px 4px 0 0!important}
+body.ref-compact #refTable td.c-cpn{white-space:normal;min-width:80px;max-width:110px}
+body.ref-compact #refTable td.c-pay{white-space:normal;min-width:90px;max-width:120px}
+body.ref-compact #refTable td.c-rt{white-space:normal;max-width:80px}
+body.ref-compact #refTable td.wrap{min-width:200px;max-width:320px}
 td.wrap{white-space:normal;min-width:260px;max-width:440px;font-size:12px;line-height:17px;color:var(--sec)}
 td .sub{display:block;font-size:11px;color:var(--muted);line-height:14px}
 .k4b{grid-template-columns:repeat(4,1fr)}
@@ -261,6 +268,7 @@ const CFG = {
   "code": "MCFTR",
   "name": "индекс Мосбиржи полной доходности"
  },
+ "compactRef": true,
  "refNote": "<b>Внимание!</b> В справочнике представлены все облигации, которые ранее были в портфеле. Чтобы увидеть актуальные — поставьте галочку «только бумаги в портфеле».",
  "switchHtml": "<div class=\"switch\"><div class=\"lnkrow\"><span class=\"lbl\">Стратегии</span><span class=\"lnk cur\">Акции на купоны</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350821293&editMode=0\" target=\"_top\">Рост и доход</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350825211&editMode=0\" target=\"_top\">Купонный профит</a></div><div class=\"lnkrow\"><a class=\"lnk risk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345529623&editMode=0\" target=\"_top\">🧭 Определить свой риск-профиль</a></div></div>",
  "learnHtml": "<div class=\"card learn\" style=\"margin-top:14px\"><h3>Полезные материалы</h3><div class=\"lnkrow\"><span class=\"lbl\">Обзоры</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349024524&editMode=0\" target=\"_top\">📊 Обзоры по облигациям</a></div><div class=\"lnkrow\"><span class=\"lbl\">Обучение по теме</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=316068107&editMode=0\" target=\"_top\">🎓 Как оценить эмитента облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=340640770&editMode=0\" target=\"_top\">🎓 Заявки на фондовом рынке</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=343337766&editMode=0\" target=\"_top\">🎓 Расчёт доходности облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345525711&editMode=0\" target=\"_top\">🎓 Стратегии работы с облигациями</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349585962&editMode=0\" target=\"_top\">🎓 ВДО: как работать с облигациями</a></div></div>"
@@ -564,6 +572,7 @@ function renderStatic(){
   $('#txH2').textContent=deals?'Все сделки':'Все покупки по текущим позициям';
   $('#txNote').textContent=`Источник: лист «${CFG.sheets.tx}». Цена облигаций — в % от номинала.`;
   $('#refSrc').textContent=`Источник: лист «${CFG.sheets.ref}».`;
+  if(CFG.compactRef) document.body.classList.add('ref-compact');
   if(CFG.refNote){ $('#refNote').classList.remove('hide'); $('#refNote div').innerHTML=CFG.refNote; }
   $('#switchBox').innerHTML=CFG.switchHtml||''; $('#learnBox').innerHTML=CFG.learnHtml||'';
 }
@@ -647,16 +656,16 @@ function renderRef(){
     return Object.assign({},r,{_held:held.has(r.t), _matured:!!(r.mat&&r.mat<today), _price:m.price, _y:m.y, _toOff:m.yType?/OFFER|BUYBACK/i.test(m.yType):!!m.offer, _offDate:m.offer, _status:pos?pos.status:'', _fl:/флоат|плава/i.test(r.ctype)}); })
     .filter(r=>(!onlyHeld||r._held)&&(!act||!r._matured)&&(!q||(r.name+' '+r.t).toLowerCase().includes(q)));
   sortable($('#refTable'),[
-    {k:'name',h:'Облигация',l:1,f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)}</span>`+
+    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)}</span>`+
       (o._held?'<span class="tag" style="margin:3px 4px 0 0">в портфеле</span>':'')+(o._fl?'<span class="tag fl" style="margin:3px 4px 0 0">плавающий купон</span>':'')+
       (o.qual?'<span class="tag" style="margin:3px 4px 0 0;background:#EEF2F7;color:#475569">для квалов</span>':'')+(o._matured?'<span class="tag" style="margin:3px 0 0;background:#EEF2F7;color:#64748B">погашена</span>':'')},
     {k:'_status',h:'Статус',l:1,f:o=>stBadge(o._status)},
-    {k:'cpn',h:'Купон',l:1,f:o=>`<b>${esc(o.cpn)}</b><span class="sub">${esc(o._fl?'флоатер':(o.ctype||''))}</span>`},
-    {k:'pay',h:'Выплаты',l:1,f:o=>`${esc(o.pay)}${isFinite(o.per)?`<span class="sub">период ${fmt(o.per)} дн.</span>`:''}`},
+    {k:'cpn',h:'Купон',l:1,c:'c-cpn',f:o=>`<b>${esc(o.cpn)}</b><span class="sub">${esc(o._fl?'флоатер':(o.ctype||''))}</span>`},
+    {k:'pay',h:'Выплаты',l:1,c:'c-pay',f:o=>`${esc(o.pay)}${isFinite(o.per)?`<span class="sub">период ${fmt(o.per)} дн.</span>`:''}`},
     {k:'mat',h:'Погашение',f:o=>ruDate(o.mat)},
     {k:'offer',h:'Оферта',f:o=>o.offer?(o._offDate?ruDate(o._offDate):'есть'):'—'},
     {k:'amort',h:'Амортизация',f:o=>o.amort?'есть':'—'},
-    {k:'rating',h:'Рейтинг',l:1,f:o=>esc(o.rating||'—')},
+    {k:'rating',h:'Рейтинг',l:1,c:'c-rt',f:o=>esc(o.rating||'—')},
     {k:'_price',h:'Цена, %',f:o=>fmt(o._price,2)},
     {k:'_y',h:'Доходность',f:o=>isFinite(o._y)?`<b>${fmt(o._y,2)}%</b><span class="sub">${o._toOff?'к оферте':'к погашению'}</span>`:'—'},
     {k:'feat',h:'Особенности',l:1,c:'wrap',f:o=>esc(o.feat||'—')}
