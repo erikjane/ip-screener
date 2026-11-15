@@ -148,6 +148,8 @@ body.club #btnFull{display:inline-block}
 .switch{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
 .attn{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--border);border-left:6px solid var(--lime);border-radius:12px;padding:12px 16px;margin-bottom:14px;color:var(--navy);font-size:14px;line-height:20px}
 .attn b{font-weight:700}
+#posStats .kpi .s{line-height:17px;margin-top:6px}
+#posStats .kpi .v small{font-size:13px;font-weight:500;color:var(--muted);margin-left:6px}
 .learn .lnkrow+.lnkrow{margin-top:10px}
 @media(max-width:600px){.lnk{padding:6px 10px;font-size:12px}.attn{font-size:13px;padding:10px 12px}}
 </style>
@@ -189,6 +191,7 @@ body.club #btnFull{display:inline-block}
 
   <section id="t-positions" class="hide">
     <div class="attn" id="attnBuy"><span style="font-size:20px">⚠️</span><div><b>Внимание!</b> При покупке обращайте внимание на цену: покупка только лимитированными заявками.</div></div>
+    <div class="grid k4 hide" id="posStats" style="margin-bottom:14px"></div>
     <div class="card"><h3>Облигации</h3><div class="muted" style="font-size:13px;margin:-4px 0 12px">Доходность — актуальная эффективная доходность по текущей цене на Московской бирже: если покупать облигацию сейчас, а не по нашей цене покупки. Считается к оферте, если она есть, иначе к погашению. Обновляется при каждом открытии страницы; в выходные — по цене закрытия последних торгов.</div><div class="tw" id="bondTable" style="max-height:none"></div>
       <div class="fn">* Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению.<br>* <span class="tag fl">плавающий купон</span> — купон привязан к ключевой ставке или RUONIA; доходность рассчитана исходя из текущего купона и изменится вместе со ставкой.<br>* Изменение цены — от средней цены покупки, без учёта купонов. Полная доходность учитывает полученные купоны (Snowball).</div>
     </div>
@@ -624,7 +627,29 @@ function renderOverview(){ const m=M, it=P.it;
   $('#sbNote1').textContent=sbLine();
 }
 function monthsAhead(){ const r=[]; const d=new Date(); d.setDate(1); for(let i=0;i<12;i++){ r.push(iso(d).slice(0,7)); d.setMonth(d.getMonth()+1); } return r; }
+function renderPosStats(){
+  const box=$('#posStats'); if(!CFG.posStats){ box.classList.add('hide'); return; }
+  const bonds=P.pos.filter(x=>x.kind==='bond'&&x.mkt);
+  let cpnY=0, clean=0;
+  for(const x of bonds){ const m=(MKT||{})[x.t]||{}; const fx=isFinite(x.fx)?x.fx:1;
+    const ann=isFinite(m.cpnPct)?m.cpnPct/100*x.face:(isFinite(m.cpn)&&isFinite(m.period)&&m.period>0?m.cpn*365/m.period:NaN);
+    const cv=x.q*x.pricePct/100*x.face*fx; if(isFinite(ann)&&isFinite(cv)&&cv>0){ cpnY+=ann*x.q*fx; clean+=cv; } }
+  const cy=clean>0?cpnY/clean*100:NaN, m=M, key=P.it.key;
+  const md=isFinite(m.avgD)&&isFinite(m.avgY)?m.avgD/(1+m.avgY/100):NaN;
+  const c12=CPN?couponPlan().filter(e=>e.kind==='coupon').reduce((s,e)=>s+e.sum,0):NaN;
+  box.classList.remove('hide');
+  box.innerHTML=`
+   <div class="card kpi"><div class="l">Текущая доходность</div><div class="v">${isFinite(cy)?fmt(cy,2)+'%':'—'}</div>
+     <div class="s">Сколько процентов годовых приносят купоны относительно сегодняшней цены облигаций, без учёта изменения цены.</div></div>
+   <div class="card kpi"><div class="l">Эффективная доходность</div><div class="v">${isFinite(m.avgY)?fmt(m.avgY,2)+'%':'—'}${isFinite(key)&&isFinite(m.avgY)?`<small>${m.avgY-key>=0?'+':''}${fmt(m.avgY-key,2)} п.п. к ключевой</small>`:''}</div>
+     <div class="s">Сколько в год заработает тот, кто купит эти облигации сегодня и продержит до погашения или оферты, с реинвестированием купонов.</div></div>
+   <div class="card kpi"><div class="l">Дюрация портфеля</div><div class="v">${isFinite(m.avgD)?fmt(m.avgD,1)+' г.':'—'}</div>
+     <div class="s">${isFinite(md)?`Если доходности облигаций снизятся на 1 п.п. (обычно вслед за ключевой ставкой), портфель подорожает примерно на ${fmt(md,1)}%, при росте — подешевеет.`:'Средний срок возврата вложенных денег с учётом купонов: чем он больше, тем сильнее цены реагируют на ставку.'}</div></div>
+   <div class="card kpi"><div class="l">Купоны за 12 месяцев</div><div class="v">${isFinite(c12)?fmt(c12)+' ₽':'…'}</div>
+     <div class="s">Сколько купонов получит портфель за следующие 12 месяцев при текущем составе (по графику выплат биржи).</div></div>`;
+}
 function renderPositions(){
+  renderPosStats();
   const bonds=P.pos.filter(x=>x.kind==='bond').map(x=>Object.assign(x,{_ret:x.sb.ret,_got:x.sb.got,_rate:rating(x.sb.rating),_date:x.offer||x.mat}));
   sortable($('#bondTable'),[
     {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
