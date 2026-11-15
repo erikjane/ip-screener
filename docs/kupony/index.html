@@ -637,7 +637,8 @@ function renderPosStats(){
     const ann=isFinite(m.cpnPct)?m.cpnPct/100*x.face:(isFinite(m.cpn)&&isFinite(m.period)&&m.period>0?m.cpn*365/m.period:NaN);
     const cv=x.q*x.pricePct/100*x.face*fx; if(isFinite(ann)&&isFinite(cv)&&cv>0){ cpnY+=ann*x.q*fx; clean+=cv; } }
   const cy=clean>0?cpnY/clean*100:NaN, m=M, key=P.it.key;
-  const fixb=P.pos.filter(x=>x.kind==='bond'&&(!x.cur||x.cur==='RUB')&&isFinite(x.y)&&!isFloat(x));
+  const fixb=P.pos.filter(x=>x.kind==='bond'&&(CFG.posStatsFx||!x.cur||x.cur==='RUB')&&isFinite(x.y)&&!isFloat(x));
+  const hasFx=CFG.posStatsFx&&fixb.some(x=>x.cur&&x.cur!=='RUB');
   const nFl=P.pos.filter(x=>x.kind==='bond'&&isFloat(x)).length;
   const fv=fixb.reduce((s,x)=>s+x.val,0), ey=fv>0?fixb.reduce((s,x)=>s+x.y*x.val,0)/fv:NaN;
   const md=isFinite(m.avgD)&&isFinite(ey)?m.avgD/(1+ey/100):NaN;
@@ -647,7 +648,7 @@ function renderPosStats(){
    <div class="card kpi"><div class="l">Текущая доходность</div><div class="v">${isFinite(cy)?fmt(cy,2)+'%':'—'}</div>
      <div class="s">Сколько процентов годовых приносят купоны относительно сегодняшней цены облигаций, без учёта изменения цены.</div></div>
    <div class="card kpi"><div class="l">Эффективная доходность</div><div class="v">${isFinite(ey)?fmt(ey,2)+'%':'—'}${isFinite(key)&&isFinite(ey)?`<small>${ey-key>=0?'+':''}${fmt(ey-key,2)} п.п. к ключевой</small>`:''}</div>
-     <div class="s">Сколько в год заработает тот, кто купит эти облигации сегодня и продержит до погашения или оферты, с реинвестированием купонов.${nFl?' Без флоатеров: их доходность зависит от будущей ставки.':''}</div></div>
+     <div class="s">Сколько в год заработает тот, кто купит эти облигации сегодня и продержит до погашения или оферты, с реинвестированием купонов.${nFl?' Без флоатеров: их доходность зависит от будущей ставки.':''}${hasFx?' Доходность чуть ниже из-за валютных облигаций с более низким купоном.':''}</div></div>
    <div class="card kpi"><div class="l">Дюрация портфеля</div><div class="v">${isFinite(m.avgD)?fmt(m.avgD,1)+' г.':'—'}</div>
      <div class="s">${isFinite(md)?`Если доходности облигаций снизятся на 1 п.п. (обычно вслед за ключевой ставкой), портфель подорожает примерно на ${fmt(md,1)}%, при росте — подешевеет.`:'Средний срок возврата вложенных денег с учётом купонов: чем он больше, тем сильнее цены реагируют на ставку.'}</div></div>
    <div class="card kpi"><div class="l">Купоны за 12 месяцев</div><div class="v">${isFinite(c12)?fmt(c12)+' ₽':'…'}</div>
