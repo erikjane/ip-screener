@@ -96,6 +96,12 @@ body.club #btnSettings,body.club #btnReload{display:none!important}
 .fn{font-size:12px;color:var(--muted);margin-top:8px;line-height:18px}
 .tag{display:inline-block;padding:1px 6px;border-radius:6px;font-size:11px;font-weight:600;background:#E0E8FF;color:var(--blue);margin-left:6px;white-space:nowrap}
 .tag.fl{background:#FEF3C7;color:#92400E}
+body.pos-compact #bondTable th,body.pos-compact #bondTable td,body.pos-compact #stockTable th,body.pos-compact #stockTable td{padding:7px 8px}
+body.pos-compact #bondTable th,body.pos-compact #stockTable th{white-space:normal;vertical-align:bottom}
+body.pos-compact td.c-name{white-space:normal;min-width:150px;max-width:200px}
+body.pos-compact td.c-name .tag{margin:3px 4px 0 0!important}
+body.pos-compact td.c-date{white-space:normal;min-width:84px;max-width:110px}
+body.pos-compact td.c-rt{white-space:normal;max-width:80px}
 body.ref-compact #refTable th,body.ref-compact #refTable td{padding:7px 8px}
 body.ref-compact #refTable td.c-name{white-space:normal;min-width:150px;max-width:200px}
 body.ref-compact #refTable td.c-name .tag{margin:3px 4px 0 0!important}
@@ -299,6 +305,7 @@ const CURN={USD:'долларах',EUR:'евро',CNY:'юанях',RUB:'рубл
 const MON=['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
 const monLabel = ym => { const [y,m]=ym.split('-'); return MON[+m-1]+' '+y.slice(2); };
 function rating(s){ s=String(s||''); if(!s) return '—';
+  if(CFG.compactPos){ const v=[...new Set(s.split(',').map(x=>x.split(':').pop().trim()).filter(x=>x&&x!=='-'))]; return v.join('/')||'—'; }
   return s.split(',').map(x=>x.trim()).filter(x=>x && !/:\s*-?\s*$/.test(x)).map(x=>x.replace('ACRA:','АКРА').replace('ExpertRA:','Эксперт РА')).join(' · ')||'—'; }
 
 /* ===== загрузка из таблицы ===== */
@@ -571,6 +578,7 @@ function renderStatic(){
   $('#txNote').textContent=`Источник: лист «${CFG.sheets.tx}». Цена облигаций — в % от номинала.`;
   $('#refSrc').textContent=`Источник: лист «${CFG.sheets.ref}».`;
   if(CFG.compactRef) document.body.classList.add('ref-compact');
+  if(CFG.compactPos) document.body.classList.add('pos-compact');
   if(CFG.refNote){ $('#refNote').classList.remove('hide'); $('#refNote div').innerHTML=CFG.refNote; }
   $('#switchBox').innerHTML=CFG.switchHtml||''; $('#learnBox').innerHTML=CFG.learnHtml||'';
 }
@@ -615,7 +623,7 @@ function monthsAhead(){ const r=[]; const d=new Date(); d.setDate(1); for(let i=
 function renderPositions(){
   const bonds=P.pos.filter(x=>x.kind==='bond').map(x=>Object.assign(x,{_ret:x.sb.ret,_got:x.sb.got,_rate:rating(x.sb.rating),_date:x.offer||x.mat}));
   sortable($('#bondTable'),[
-    {k:'name',h:'Облигация',l:1,f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
+    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
     {k:'status',h:'Статус',l:1,f:o=>stBadge(o.status)},
     {k:'q',h:'Шт',f:o=>fmt(o.q)},
     {k:'avg',h:'Ср. цена, %',f:o=>fmt(o.avg,2)},
@@ -625,15 +633,15 @@ function renderPositions(){
     {k:'val',h:'Стоимость, ₽',f:o=>fmt(o.val)},
     {k:'share',h:'Доля',f:o=>fmt(o.share,2)+'%'},
     {k:'y',h:'Доходность',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
-    {k:'_date',h:'Оферта / погашение',f:o=>o.offer?`оферта ${ruDate(o.offer)}<span class="sub">погаш. ${ruDate(o.mat)}</span>`:ruDate(o.mat)},
+    {k:'_date',h:'Оферта / погашение',c:'c-date',f:o=>o.offer?`оферта ${ruDate(o.offer)}<span class="sub">погаш. ${ruDate(o.mat)}</span>`:ruDate(o.mat)},
     {k:'dur',h:'Дюрация, лет',f:o=>fmt(o.dur,2)},
-    {k:'_rate',h:'Рейтинг*',l:1,f:o=>esc(o._rate)},
+    {k:'_rate',h:'Рейтинг*',l:1,c:'c-rt',f:o=>esc(o._rate)},
     {k:'_ret',h:'Полная дох.*',f:o=>isFinite(o._ret)?badge(o._ret,fmtP(o._ret)):'—'}
   ], bonds, {k:'share',d:-1});
   $('#stockCard').classList.toggle('hide',!P.pos.some(x=>x.kind==='stock'));
   const st=P.pos.filter(x=>x.kind==='stock').map(x=>Object.assign(x,{_ret:x.sb.ret,_dy:x.sb.dy,_dr:x.sb.drate}));
   sortable($('#stockTable'),[
-    {k:'name',h:'Акция',l:1,f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)}</span>`},
+    {k:'name',h:'Акция',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)}</span>`},
     {k:'status',h:'Статус',l:1,f:o=>stBadge(o.status)},
     {k:'q',h:'Шт',f:o=>fmt(o.q)},
     {k:'avg',h:'Ср. цена, ₽',f:o=>fmtPrice(o.avg)},
