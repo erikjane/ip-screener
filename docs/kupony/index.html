@@ -184,6 +184,7 @@ body.club #btnFull{display:inline-block}
   </section>
 
   <section id="t-ref" class="hide">
+    <div class="attn hide" id="refNote"><span style="font-size:20px">⚠️</span><div></div></div>
     <div class="card"><h3>Справочник облигаций</h3>
       <div class="muted" style="font-size:13px;margin:-4px 0 12px">Параметры выпусков из нашего справочника: тип и размер купона, график выплат, оферты, амортизация, особенности. Цена и доходность — актуальные данные Московской биржи на момент открытия страницы.</div>
       <div class="fl" style="margin-bottom:10px"><input id="refQ" placeholder="Поиск: название, ISIN…" style="max-width:280px"><label style="margin:0"><input type="checkbox" id="refHeld" style="width:auto"> только бумаги в портфеле</label><label style="margin:0"><input type="checkbox" id="refAct" style="width:auto" checked> скрыть погашенные</label></div>
@@ -260,6 +261,7 @@ const CFG = {
   "code": "MCFTR",
   "name": "индекс Мосбиржи полной доходности"
  },
+ "refNote": "<b>Внимание!</b> В справочнике представлены все облигации, которые ранее были в портфеле. Чтобы увидеть актуальные — поставьте галочку «только бумаги в портфеле».",
  "switchHtml": "<div class=\"switch\"><div class=\"lnkrow\"><span class=\"lbl\">Стратегии</span><span class=\"lnk cur\">Акции на купоны</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350821293&editMode=0\" target=\"_top\">Рост и доход</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=350825211&editMode=0\" target=\"_top\">Купонный профит</a></div><div class=\"lnkrow\"><a class=\"lnk risk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345529623&editMode=0\" target=\"_top\">🧭 Определить свой риск-профиль</a></div></div>",
  "learnHtml": "<div class=\"card learn\" style=\"margin-top:14px\"><h3>Полезные материалы</h3><div class=\"lnkrow\"><span class=\"lbl\">Обзоры</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349024524&editMode=0\" target=\"_top\">📊 Обзоры по облигациям</a></div><div class=\"lnkrow\"><span class=\"lbl\">Обучение по теме</span><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=316068107&editMode=0\" target=\"_top\">🎓 Как оценить эмитента облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=340640770&editMode=0\" target=\"_top\">🎓 Заявки на фондовом рынке</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=343337766&editMode=0\" target=\"_top\">🎓 Расчёт доходности облигаций</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=345525711&editMode=0\" target=\"_top\">🎓 Стратегии работы с облигациями</a><a class=\"lnk\" href=\"https://investprivet.ru/pl/teach/control/lesson/view?id=349585962&editMode=0\" target=\"_top\">🎓 ВДО: как работать с облигациями</a></div></div>"
 };
@@ -562,6 +564,7 @@ function renderStatic(){
   $('#txH2').textContent=deals?'Все сделки':'Все покупки по текущим позициям';
   $('#txNote').textContent=`Источник: лист «${CFG.sheets.tx}». Цена облигаций — в % от номинала.`;
   $('#refSrc').textContent=`Источник: лист «${CFG.sheets.ref}».`;
+  if(CFG.refNote){ $('#refNote').classList.remove('hide'); $('#refNote div').innerHTML=CFG.refNote; }
   $('#switchBox').innerHTML=CFG.switchHtml||''; $('#learnBox').innerHTML=CFG.learnHtml||'';
 }
 renderStatic();
