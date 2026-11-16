@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 17:40",
+ "updated": "2026-11-16 17:50",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -15,27 +15,27 @@
   "start": "2026-11-12",
   "entry": 2497.38,
   "live": true,
-  "current": -0.41
+  "current": -0.5
  },
  "live": null,
- "total": 162.96,
- "live_return": -0.58,
+ "total": 162.72,
+ "live_return": -0.67,
  "maxdd": -12.7,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": 3.5
+  "2026": 3.4
  },
- "index_change": 15.3,
- "index": 2487.05,
+ "index_change": 15.2,
+ "index": 2484.77,
  "flips": [
   {
    "side": "long",
    "start": "2026-11-12",
    "entry": 2497.38,
    "live": true,
-   "current": -0.41
+   "current": -0.5
   },
   {
    "side": "short",
@@ -510,14 +510,14 @@
   {
    "date": "2026-11-16",
    "intraday": true,
-   "net": 23795,
-   "d1": -817,
-   "d3": 10133,
-   "long": 126459,
-   "short": 102664,
-   "long_num": 4860,
-   "short_num": 3352,
-   "index": 2487.05,
+   "net": 24014,
+   "d1": -598,
+   "d3": 10352,
+   "long": 127028,
+   "short": 103014,
+   "long_num": 4897,
+   "short_num": 3366,
+   "index": 2484.77,
    "pos": 1,
    "signal": "short"
   },
@@ -5926,15 +5926,15 @@
   ],
   [
    "2026-11-16",
-   162.96,
+   162.72,
    1
   ]
  ],
  "live_journal": {
-  "position": "short",
+  "position": null,
   "contract": "MXZ6",
-  "entry": 249625,
-  "entry_time": "2026-11-16 07:16",
+  "entry": null,
+  "entry_time": null,
   "events": [
    {
     "time": "2026-11-12 09:00",
@@ -5960,6 +5960,15 @@
     "price": 249625,
     "contract": "MXZ6",
     "reason": "физлица за 3 дня нарастили лонг: +10 063 контр. (порог 10 000)"
+   },
+   {
+    "time": "2026-11-16 17:45",
+    "action": "Закрываем шорт MX вручную",
+    "side": "short",
+    "price": 247250.0,
+    "contract": "MXZ6",
+    "result": 0.95,
+    "reason": "за день ситуация поменялась - наверное нажо выходить"
    }
   ],
   "trades": [
@@ -5972,18 +5981,28 @@
     "close_price": 250125.0,
     "result": 0.45,
     "manual": true
+   },
+   {
+    "side": "short",
+    "contract": "MXZ6",
+    "open_time": "2026-11-16 07:16",
+    "open_price": 249625,
+    "close_time": "2026-11-16 17:45",
+    "close_price": 247250.0,
+    "result": 0.95,
+    "manual": true
    }
   ],
-  "last_price": 247250,
-  "last_time": "17:40",
+  "last_price": 247225,
+  "last_time": "17:50",
   "contract_now": "MXZ6",
-  "current": 0.95,
-  "d3_now": 10133,
-  "snap_time": "17:35",
-  "closed_return": 0.45,
+  "current": null,
+  "d3_now": 10352,
+  "snap_time": "17:45",
+  "closed_return": 1.4,
   "total_return": 1.4,
-  "updated": "2026-11-16 17:40",
-  "blocked": null,
-  "d1_now": -817
+  "updated": "2026-11-16 17:50",
+  "blocked": "short",
+  "d1_now": -598
  }
 }
