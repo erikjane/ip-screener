@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16 07:06",
+ "updated": "2026-11-16 07:16",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -9,33 +9,33 @@
   "alert_1d": 7500
  },
  "position": "long",
- "pending": null,
+ "pending": "short",
  "current": {
   "side": "long",
   "start": "2026-11-12",
   "entry": 2497.38,
   "live": true,
-  "current": 0.53
+  "current": 0.43
  },
  "live": null,
- "total": 165.45,
- "live_return": 0.36,
+ "total": 165.18,
+ "live_return": 0.26,
  "maxdd": -12.7,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": 4.5
+  "2026": 4.4
  },
- "index_change": 16.4,
- "index": 2510.59,
+ "index_change": 16.3,
+ "index": 2508.08,
  "flips": [
   {
    "side": "long",
    "start": "2026-11-12",
    "entry": 2497.38,
    "live": true,
-   "current": 0.53
+   "current": 0.43
   },
   {
    "side": "short",
@@ -510,16 +510,16 @@
   {
    "date": "2026-11-16",
    "intraday": true,
-   "net": 23560,
-   "d1": -1052,
-   "d3": 9898,
-   "long": 122863,
-   "short": 99303,
-   "long_num": 5095,
-   "short_num": 3113,
-   "index": 2510.59,
+   "net": 23725,
+   "d1": -887,
+   "d3": 10063,
+   "long": 123137,
+   "short": 99412,
+   "long_num": 5104,
+   "short_num": 3118,
+   "index": 2508.08,
    "pos": 1,
-   "signal": null
+   "signal": "short"
   },
   {
    "date": "2026-11-13",
@@ -5926,15 +5926,15 @@
   ],
   [
    "2026-11-16",
-   165.45,
+   165.18,
    1
   ]
  ],
  "live_journal": {
-  "position": null,
+  "position": "short",
   "contract": "MXZ6",
-  "entry": null,
-  "entry_time": null,
+  "entry": 249625,
+  "entry_time": "2026-11-16 07:16",
   "events": [
    {
     "time": "2026-11-12 09:00",
@@ -5952,6 +5952,14 @@
     "contract": "MXZ6",
     "result": 0.45,
     "reason": "вижу смену по ОИ на росте Индекса, попробуем выйти"
+   },
+   {
+    "time": "2026-11-16 07:16",
+    "action": "Открываем шорт MX",
+    "side": "short",
+    "price": 249625,
+    "contract": "MXZ6",
+    "reason": "физлица за 3 дня нарастили лонг: +10 063 контр. (порог 10 000)"
    }
   ],
   "trades": [
@@ -5966,16 +5974,16 @@
     "manual": true
    }
   ],
-  "last_price": 249675,
-  "last_time": "07:05",
+  "last_price": 249625,
+  "last_time": "07:16",
   "contract_now": "MXZ6",
-  "current": null,
-  "d3_now": 9898,
-  "snap_time": "07:05",
+  "current": 0.0,
+  "d3_now": 10063,
+  "snap_time": "07:15",
   "closed_return": 0.45,
   "total_return": 0.45,
-  "updated": "2026-11-16 07:06",
+  "updated": "2026-11-16 07:16",
   "blocked": null,
-  "d1_now": -1052
+  "d1_now": -887
  }
 }
