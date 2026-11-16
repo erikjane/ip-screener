@@ -193,10 +193,10 @@ body.club #btnFull{display:inline-block}
     <div class="attn" id="attnBuy"><span style="font-size:20px">⚠️</span><div><b>Внимание!</b> При покупке обращайте внимание на цену: покупка только лимитированными заявками.</div></div>
     <div class="grid k4 hide" id="posStats" style="margin-bottom:14px"></div>
     <div class="card"><h3>Облигации</h3><div class="muted" style="font-size:13px;margin:-4px 0 12px">Доходность — актуальная эффективная доходность по текущей цене на Московской бирже: если покупать облигацию сейчас, а не по нашей цене покупки. Считается к оферте, если она есть, иначе к погашению. Обновляется при каждом открытии страницы; в выходные — по цене закрытия последних торгов.</div><div class="tw" id="bondTable" style="max-height:none"></div>
-      <div class="fn">* Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению.<br>* <span class="tag fl">плавающий купон</span> — купон привязан к ключевой ставке или RUONIA; доходность рассчитана исходя из текущего купона и изменится вместе со ставкой.<br>* Изменение цены — от средней цены покупки, без учёта купонов. Полная доходность учитывает полученные купоны (Snowball).</div>
+      <div class="fn">Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению; «расчёт» — посчитана нами по цене и купону, когда биржа не даёт её к оферте или бумаги нет на Мосбирже (например, торгуется на СПБ бирже — тогда цена из Snowball).<br><span class="tag fl">плавающий купон</span> — доходность = ключевая ставка (или RUONIA) + спред выпуска; пересчитывается при каждом изменении ставки.<br>Изменение цены — от средней цены покупки, без учёта купонов.<br>¹ Рейтинг и полная доходность (с учётом полученных купонов) — данные Snowball.</div>
     </div>
     <div class="card" style="margin-top:14px" id="stockCard"><h3>Акции</h3><div class="tw" id="stockTable" style="max-height:none"></div>
-      <div class="fn">* Цена — котировка Московской биржи на момент открытия страницы. Дивидендная доходность, полная доходность с учётом дивидендов и дивидендный рейтинг (0–100, выше — надёжнее) — данные Snowball.</div>
+      <div class="fn">Цена — котировка Московской биржи на момент открытия страницы.<br>¹ Дивидендная доходность, полная доходность с учётом дивидендов и дивидендный рейтинг (0–100, выше — надёжнее) — данные Snowball.</div>
     </div>
     <div class="fn" id="sbNote2" style="margin-top:14px"></div>
   </section>
@@ -376,6 +376,25 @@ function parse(raw){
   return p;
 }
 function bondCat(x){ if(x.cur&&x.cur!=='RUB') return 'Валютные'; if(/^SU\d/.test(x.t)) return 'ОФЗ'; if(/област|обл\.|край|республ|минфин|москва|санкт/i.test(x.name+' '+(x.sb.name||''))) return 'Субфедеральные'; return 'Корпоративные'; }
+function refOf(t){ return (P.refMap||{})[t]||null; }
+function manRating(t){ return ((CFG.manual||{})[t]||{}).rating||''; }
+function flSpread(t){ const r=refOf(t); if(!r) return null; const c=String(r.cpn||'').replace(/\([^)]*\)/g,' ');
+  const m=c.match(/(КС|ключев\S*|RUONIA)\s*\+\s*(\d+(?:[.,]\d+)?)/i); if(!m) return null;
+  return {base:/RUONIA/i.test(m[1])?'RUONIA':'КС', sp:parseFloat(m[2].replace(',','.'))}; }
+function flYield(t){ const f=flSpread(t), k=P.it.key; return f&&isFinite(k)?k+f.sp:NaN; }
+function flLabel(t){ const f=flSpread(t); return f?`${f.base==='RUONIA'?'RUONIA (≈ КС '+fmt(P.it.key,2)+'%)':'КС '+fmt(P.it.key,2)+'%'} + ${fmt(f.sp,2).replace(/,00$/,'')}%`:''; }
+function refCur(t){ const r=refOf(t); if(!r) return null; const s=(r.cpn+' '+r.feat).toLowerCase();
+  if(/евро|€|eur/.test(s)) return 'EUR'; if(/юан|¥|cny/.test(s)) return 'CNY'; if(/\$|usd|долл/.test(s)) return 'USD'; return null; }
+function refOffer(t){ const r=refOf(t); if(!r||!r.offer) return null;
+  const m=String(r.feat||'').match(/(оферт\S*|call\S*[^0-9]{0,12}|ожидаем\S* дат\S* погашени\S*)[^0-9]{0,12}(\d{1,2}[./]\d{1,2}[./]\d{4})/i);
+  const d=m?normDate(m[2].replace(/\//g,'.').split('.').map(x=>x.padStart(2,'0')).join('.')):null; return d||r.mat||null; }
+function refCpnPct(t){ const r=refOf(t); if(!r) return NaN; const m=String(r.cpn||'').match(/(\d+(?:[.,]\d+)?)\s*%/); return m?parseFloat(m[1].replace(',','.')):NaN; }
+// доходность к дате по цене (% номинала), купону (% годовых) и периоду купона — эффективная, с реинвестированием
+function ytm(price,cpn,perDays,to){ if(!isFinite(price)||!isFinite(cpn)||!to) return NaN;
+  const T=(new Date(to)-new Date())/864e5/365; if(T<=0.02) return NaN; const n=Math.max(1,Math.round(365/(perDays||182)));
+  const k=Math.ceil(T*n-1e-9), t1=T-(k-1)/n, acc=cpn*(1/n-t1); const dirty=price+Math.max(0,acc);
+  const pv=y=>{ let v=0; for(let i=0;i<k;i++){ const t=t1+i/n; v+=(cpn/n)/Math.pow(1+y,t); } return v+100/Math.pow(1+y,T); };
+  let lo=-0.5, hi=2; for(let i=0;i<80;i++){ const mid=(lo+hi)/2; if(pv(mid)>dirty) lo=mid; else hi=mid; } return (lo+hi)/2*100; }
 function isFloat(x){ if(x.kind!=='bond') return false; const r=P.refMap&&P.refMap[x.t]; if(r&&r.ctype) return /флоат|плава/i.test(r.ctype); return /плава/.test(x.sb.ctype||''); }
 
 /* ===== Московская биржа ===== */
@@ -405,7 +424,7 @@ async function loadMarket(){
     for(const t of ch){ const s=S.find(r=>r.SECID===t)||{}; const md=Md.find(r=>r.SECID===t)||{};
       const price=fin(md.LAST,md.LCURRENTPRICE,md.MARKETPRICE,s.PREVPRICE); if(isFinite(price)) out[t]={price, prev:fin(s.PREVPRICE)}; } }
   // курсы валют для облигаций в валюте
-  const curs=[...new Set(Object.values(out).map(m=>m.cur).filter(c=>c&&c!=='RUB'))];
+  const curs=[...new Set(Object.values(out).map(m=>m.cur).concat(bonds.filter(t=>!out[t]).map(refCur)).filter(c=>c&&c!=='RUB'))];
   out.__fx={RUB:1};
   if(curs.length){
     try{ const j=await issJson('https://iss.moex.com/iss/engines/currency/markets/selt/boards/CETS/securities.json?iss.meta=off&iss.only=securities,marketdata&securities=USD000UTSTOM,EUR_RUB__TOM,CNYRUB_TOM');
@@ -449,15 +468,20 @@ function enrich(){ // цены биржи, стоимость, доли
   for(const x of P.pos){ const m=(MKT||{})[x.t];
     x.mkt=!!(m&&isFinite(m.price));
     if(x.kind==='bond'){
-      x.cur=(m&&m.cur)||'RUB'; x.fx=x.cur==='RUB'?1:(((MKT||{}).__fx||{})[x.cur]||NaN);
-      x.face=m&&m.face||1000; x.pricePct=x.mkt?m.price:(isFinite(x.sb.price)&&x.cur==='RUB'?x.sb.price/10:NaN); x.nkd=m?m.nkd:NaN;
+      x.cur=(m&&m.cur)||(MKT&&!m&&refCur(x.t))||'RUB'; x.fx=x.cur==='RUB'?1:(((MKT||{}).__fx||{})[x.cur]||NaN);
+      x.face=m&&m.face||1000; x.pricePct=x.mkt?m.price:NaN; x.nkd=m?m.nkd:NaN; x.offMoex=!!(MKT&&!m);
+      if(!x.mkt && isFinite(x.sb.price) && isFinite(x.fx)){ // нет на Мосбирже (например, СПБ биржа): цена Snowball в ₽ за бумагу → % номинала
+        const fc=[100,1000].map(f=>({f,p:x.sb.price/(f*x.fx)*100})).sort((a,b)=>Math.abs(a.p-100)-Math.abs(b.p-100))[0]; x.face=fc.f; x.pricePct=fc.p; }
       x.val=x.mkt&&isFinite(x.fx)? x.q*(x.pricePct/100*x.face+(isFinite(x.nkd)?x.nkd:0))*x.fx : x.sb.val;
       x.chg=isFinite(x.avg)&&isFinite(x.pricePct)? (x.pricePct/x.avg-1)*100 : x.sb.chg;
       x.y=m&&isFinite(m.y)?m.y:NaN; x.yFrom='iss';
-      if(!isFinite(x.y) && !isFloat(x) && isFinite(x.sb.y)){ x.y=x.sb.y; x.yFrom='sb'; }
-      const off=(m&&m.offer)||x.sb.off, mat=(m&&m.mat)||x.sb.mat;
+      const rOff=refOffer(x.t), off=(m&&m.offer)||x.sb.off||rOff, mat=(m&&m.mat)||x.sb.mat||(refOf(x.t)||{}).mat;
       x.offer=off&&off>=iso(new Date())?off:null; x.mat=mat;
       x.toOffer = m&&m.yType? /OFFER|BUYBACK/i.test(m.yType) : !!x.offer;
+      if(isFloat(x)){ const fy=flYield(x.t); if(isFinite(fy)){ x.y=fy; x.yFrom='fl'; x.toOffer=false; } }
+      else if(x.offer && !x.toOffer && isFinite(x.pricePct)){ // оферта есть в справочнике, а биржа считает к погашению
+        const cp=m&&isFinite(m.cpnPct)?m.cpnPct:refCpnPct(x.t), yy=ytm(x.pricePct,cp,(m&&m.period)||(refOf(x.t)||{}).per,x.offer); if(isFinite(yy)){ x.y=yy; x.yFrom='calc'; x.toOffer=true; } }
+      if(!isFinite(x.y) && !isFloat(x)){ const yy=ytm(x.pricePct,refCpnPct(x.t),(refOf(x.t)||{}).per,x.offer||x.mat); if(isFinite(yy)){ x.y=yy; x.yFrom='calc'; } else if(isFinite(x.sb.y)){ x.y=x.sb.y; x.yFrom='sb'; } }
       x.dur=m&&isFinite(m.dur)?m.dur/365:NaN; x.cat=bondCat(x);
     } else {
       x.price=x.mkt?m.price:x.sb.price; x.val=x.mkt? x.q*x.price : x.sb.val;
@@ -533,7 +557,7 @@ function sortable(el, cols, rows, def){
   draw();
 }
 function stBadge(s){ s=String(s||'').toLowerCase(); return s?`<span class="badge ${s.startsWith('покуп')?'b-up':(s.startsWith('прод')?'b-down':'b-n')}">${esc(s)}</span>`:''; }
-function sbLine(){ return P.it.upd?`* Данные Snowball (полная доходность, полученные выплаты, прогноз выплат, рейтинги, доходность за 12 месяцев и с начала года) обновляются раз в 2 дня. Последнее обновление: ${esc(P.it.upd)}.`:''; }
+function sbLine(){ return P.it.upd?`¹ Данные Snowball (полная доходность, полученные выплаты, прогноз выплат, рейтинги, доходность за 12 месяцев и с начала года) обновляются раз в 2 дня. Последнее обновление: ${esc(P.it.upd)}.`:''; }
 
 function build(){
   if(!(RAW.sheets||{})[CFG.sheets.gk]){ msg(CLUB?'Данные портфеля временно недоступны.':`В подключённой таблице нет листа «${CFG.sheets.gk}». Похоже, в настройках ⚙ указан скрипт другой стратегии — для «${CFG.title}» нужен свой скрипт и свой ключ.`); return; }
@@ -572,13 +596,13 @@ function renderOverview(){ const m=M, it=P.it;
    <div class="card kpi"><div class="l">Прибыль</div><div class="v ${cls(m.profit)}">${m.profit>0?'+':''}${fmt(m.profit)} ₽</div><div class="s">${fmtP(m.profit/m.invested*100)} к внесённому</div></div>
    <div class="card kpi"><div class="l">Среднегодовая доходность (XIRR)</div><div class="v ${cls(m.xirr)}">${fmtP(m.xirr)}</div><div class="s">облигации ${fmt(m.bv/m.cur*100,0)}%${m.sv>0?' · акции '+fmt(m.sv/m.cur*100,0)+'%':(m.fxb>0?' · в т.ч. валютные '+fmt(m.fxb/m.cur*100,0)+'%':'')}</div></div>`;
   $('#kpis2').innerHTML=`
-   <div class="card kpi"><div class="l">Получено купонов и дивидендов*</div><div class="v">${fmt(it.got)} ₽</div><div class="s">за весь период</div></div>
-   <div class="card kpi"><div class="l">Прогноз выплат на 12 месяцев*</div><div class="v">${fmt(it.fc)} ₽</div><div class="s">${isFinite(it.fcY)?fmt(it.fcY,2)+'% к стоимости портфеля':''}</div></div>
+   <div class="card kpi"><div class="l">Получено купонов и дивидендов¹</div><div class="v">${fmt(it.got)} ₽</div><div class="s">за весь период</div></div>
+   <div class="card kpi"><div class="l">Прогноз выплат на 12 месяцев¹</div><div class="v">${fmt(it.fc)} ₽</div><div class="s">${isFinite(it.fcY)?fmt(it.fcY,2)+'% к стоимости портфеля':''}</div></div>
    <div class="card kpi"><div class="l">Средняя доходность облигаций</div><div class="v">${isFinite(m.avgY)?fmt(m.avgY,2)+'%':'—'}</div><div class="s">${m.fxb>0?'рублёвых, ':''}к погашению или оферте, взвешенно по стоимости</div></div>
    <div class="card kpi"><div class="l">Средняя дюрация облигаций</div><div class="v">${isFinite(m.avgD)?fmt(m.avgD,1)+' г.':'—'}</div><div class="s">${isFinite(it.key)&&isFinite(m.avgY)?'спред к ключевой ставке '+fmtP(m.avgY-it.key,2):''}</div></div>`;
   $('#perf').innerHTML=`<table><tr><th class="l">Период</th><th>Портфель</th><th>${CFG.bench.code}</th><th>Разница</th></tr>`+
-    m.periods.map(p=>`<tr><td class="l">${p.label}${p.sb?'*':''}<div class="muted" style="font-size:11px">с ${ruDate(p.d0)}</div></td><td>${badge(p.port,fmtP(p.port))}</td><td>${IDX?fmtP(p.idx):'<span class="muted">загрузка…</span>'}</td><td>${IDX&&isFinite(p.alpha)?badge(p.alpha,fmtP(p.alpha)):'—'}</td></tr>`).join('')+'</table>';
-  $('#perfNote').innerHTML=(P.contrib.length>1?'Портфель с даты открытия — доходность во времени по помесячной стоимости портфеля с поправкой на пополнения.':'Портфель с даты открытия — текущая стоимость к внесённым средствам (купоны реинвестируются и уже в стоимости).')+' XIRR — среднегодовая доходность с учётом дат взносов.<br>* За 12 месяцев и с начала года — расчёт Snowball с учётом выплат.';
+    m.periods.map(p=>`<tr><td class="l">${p.label}${p.sb?'¹':''}<div class="muted" style="font-size:11px">с ${ruDate(p.d0)}</div></td><td>${badge(p.port,fmtP(p.port))}</td><td>${IDX?fmtP(p.idx):'<span class="muted">загрузка…</span>'}</td><td>${IDX&&isFinite(p.alpha)?badge(p.alpha,fmtP(p.alpha)):'—'}</td></tr>`).join('')+'</table>';
+  $('#perfNote').innerHTML=(P.contrib.length>1?'Портфель с даты открытия — доходность во времени по помесячной стоимости портфеля с поправкой на пополнения.':'Портфель с даты открытия — текущая стоимость к внесённым средствам (купоны реинвестируются и уже в стоимости).')+' XIRR — среднегодовая доходность с учётом дат взносов.<br>¹ За 12 месяцев и с начала года — расчёт Snowball с учётом выплат.';
   const parts=[['ОФЗ',m.ofz],['Корпоративные облигации',m.corp],['Субфедеральные облигации',m.reg],['Валютные облигации',m.fxb],['Акции',m.sv],['Деньги',P.cash]].filter(x=>x[1]>0);
   chart('chStruct',{type:'doughnut',data:{labels:parts.map(x=>x[0]),datasets:[{data:parts.map(x=>Math.round(x[1])),backgroundColor:PAL,borderWidth:2,borderColor:'#fff'}]},
     options:{maintainAspectRatio:false,plugins:{legend:{position:'right'},tooltip:{callbacks:{label:c=>`${c.label}: ${fmt(c.raw)} ₽ (${fmt(c.raw/m.cur*100,1)}%)`}}}}});
@@ -625,9 +649,9 @@ function renderPosStats(){
 }
 function renderPositions(){
   renderPosStats();
-  const bonds=P.pos.filter(x=>x.kind==='bond').map(x=>Object.assign(x,{_ret:x.sb.ret,_got:x.sb.got,_rate:rating(x.sb.rating),_date:x.offer||x.mat}));
+  const bonds=P.pos.filter(x=>x.kind==='bond').map(x=>Object.assign(x,{_ret:x.sb.ret,_got:x.sb.got,_rate:(()=>{ const a=rating(x.sb.rating); return a!=='—'?a:((refOf(x.t)||{}).rating||manRating(x.t)||'—'); })(),_date:x.offer||x.mat}));
   sortable($('#bondTable'),[
-    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
+    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}${o.offMoex?' · нет на Мосбирже, цена Snowball':''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
     {k:'status',h:'Статус',l:1,f:o=>stBadge(o.status)},
     {k:'q',h:'Шт',f:o=>fmt(o.q)},
     {k:'avg',h:'Ср. цена, %',f:o=>fmt(o.avg,2)},
@@ -636,11 +660,11 @@ function renderPositions(){
     {k:'nkd',h:'НКД, ₽',f:o=>fmt(o.nkd*(isFinite(o.fx)?o.fx:1),2)},
     {k:'val',h:'Стоимость, ₽',f:o=>fmt(o.val)},
     {k:'share',h:'Доля',f:o=>fmt(o.share,2)+'%'},
-    {k:'y',h:'Доходность',c:'c-y',f:o=>isFinite(o.y)?`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}</span>`:'—'},
+    {k:'y',h:'Доходность',c:'c-y',f:o=>isFinite(o.y)?(o.yFrom==='fl'?`<b>${fmt(o.y,2)}%</b><span class="sub">${esc(flLabel(o.t))}</span>`:`<b>${fmt(o.y,2)}%</b><span class="sub">${o.toOffer?'к оферте':'к погашению'}${o.cur&&o.cur!=='RUB'?' · в '+CURN[o.cur]:''}${o.yFrom==='sb'?' · Snowball':''}${o.yFrom==='calc'?' · расчёт':''}</span>`):'—'},
     {k:'_date',h:'Оферта / погашение',c:'c-date',f:o=>o.offer?`оферта ${ruDate(o.offer)}<span class="sub">погаш. ${ruDate(o.mat)}</span>`:ruDate(o.mat)},
     {k:'dur',h:'Дюрация, лет',f:o=>fmt(o.dur,2)},
-    {k:'_rate',h:'Рейтинг*',l:1,c:'c-rt',f:o=>esc(o._rate)},
-    {k:'_ret',h:'Полная дох.*',f:o=>isFinite(o._ret)?badge(o._ret,fmtP(o._ret)):'—'}
+    {k:'_rate',h:'Рейтинг¹',l:1,c:'c-rt',f:o=>esc(o._rate)},
+    {k:'_ret',h:'Полная дох.¹',f:o=>isFinite(o._ret)?badge(o._ret,fmtP(o._ret)):'—'}
   ], bonds, {k:'share',d:-1});
   $('#stockCard').classList.toggle('hide',!P.pos.some(x=>x.kind==='stock'));
   const st=P.pos.filter(x=>x.kind==='stock').map(x=>Object.assign(x,{_ret:x.sb.ret,_dy:x.sb.dy,_dr:x.sb.drate}));
@@ -653,9 +677,9 @@ function renderPositions(){
     {k:'chg',h:'Изм. цены',f:o=>badge(o.chg,fmtP(o.chg))},
     {k:'val',h:'Стоимость, ₽',f:o=>fmt(o.val)},
     {k:'share',h:'Доля',f:o=>fmt(o.share,2)+'%'},
-    {k:'_dy',h:'Див. дох.*',f:o=>isFinite(o._dy)?fmt(o._dy,2)+'%':'—'},
-    {k:'_ret',h:'Полная дох.*',f:o=>isFinite(o._ret)?badge(o._ret,fmtP(o._ret)):'—'},
-    {k:'_dr',h:'Див. рейтинг*',f:o=>isFinite(o._dr)?fmt(o._dr):'—'}
+    {k:'_dy',h:'Див. дох.¹',f:o=>isFinite(o._dy)?fmt(o._dy,2)+'%':'—'},
+    {k:'_ret',h:'Полная дох.¹',f:o=>isFinite(o._ret)?badge(o._ret,fmtP(o._ret)):'—'},
+    {k:'_dr',h:'Див. рейтинг¹',f:o=>isFinite(o._dr)?fmt(o._dr):'—'}
   ], st, {k:'share',d:-1});
   $('#sbNote2').textContent=sbLine();
 }
@@ -663,7 +687,8 @@ function renderRef(){
   const today=iso(new Date()); const held=new Set(P.pos.map(x=>x.t));
   const q=($('#refQ').value||'').toLowerCase(), onlyHeld=$('#refHeld').checked, act=$('#refAct').checked;
   const rows=P.ref.map(r=>{ const m=(MKT||{})[r.t]||{}; const pos=P.pos.find(x=>x.t===r.t);
-    return Object.assign({},r,{_held:held.has(r.t), _matured:!!(r.mat&&r.mat<today), _price:m.price, _y:m.y, _toOff:m.yType?/OFFER|BUYBACK/i.test(m.yType):!!m.offer, _offDate:m.offer, _status:pos?pos.status:'', _fl:/флоат|плава/i.test(r.ctype)}); })
+    return Object.assign({},r,{_held:held.has(r.t), _matured:!!(r.mat&&r.mat<today), _price:isFinite(m.price)?m.price:(pos&&isFinite(pos.pricePct)?pos.pricePct:NaN), _y:m.y, _toOff:m.yType?/OFFER|BUYBACK/i.test(m.yType):!!m.offer, _offDate:m.offer||refOffer(r.t), _rate:r.rating||(pos&&rating(pos.sb.rating)!=='—'?rating(pos.sb.rating):'')||manRating(r.t), _ny:pos&&pos.yFrom==='calc'?pos.y:NaN, _status:pos?pos.status:'', _fl:/флоат|плава/i.test(r.ctype)}); })
+    .map(o=>{ if(o._fl&&isFinite(flYield(o.t))) o._y=flYield(o.t); else if(isFinite(o._ny)) o._y=o._ny; return o; })
     .filter(r=>(!onlyHeld||r._held)&&(!act||!r._matured)&&(!q||(r.name+' '+r.t).toLowerCase().includes(q)));
   sortable($('#refTable'),[
     {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)}</span>`+
@@ -675,9 +700,9 @@ function renderRef(){
     {k:'mat',h:'Погашение',f:o=>ruDate(o.mat)},
     {k:'offer',h:'Оферта',f:o=>o.offer?(o._offDate?ruDate(o._offDate):'есть'):'—'},
     {k:'amort',h:'Амортизация',f:o=>o.amort?'есть':'—'},
-    {k:'rating',h:'Рейтинг',l:1,c:'c-rt',f:o=>esc(o.rating||'—')},
+    {k:'_rate',h:'Рейтинг',l:1,c:'c-rt',f:o=>esc(o._rate&&o._rate!=='—'?o._rate:'—')},
     {k:'_price',h:'Цена, %',f:o=>fmt(o._price,2)},
-    {k:'_y',h:'Доходность',f:o=>isFinite(o._y)?`<b>${fmt(o._y,2)}%</b><span class="sub">${o._toOff?'к оферте':'к погашению'}</span>`:'—'},
+    {k:'_y',h:'Доходность',f:o=>o._fl&&isFinite(flYield(o.t))?`<b>${fmt(flYield(o.t),2)}%</b><span class="sub">${esc(flLabel(o.t))}</span>`:(isFinite(o._ny)?`<b>${fmt(o._ny,2)}%</b><span class="sub">расчёт</span>`:(isFinite(o._y)?`<b>${fmt(o._y,2)}%</b><span class="sub">${o._toOff?'к оферте':'к погашению'}</span>`:'—'))},
     {k:'feat',h:'Особенности',l:1,c:'wrap',f:o=>esc(o.feat||'—')}
   ], rows, {k:'_held',d:-1});
 }
