@@ -193,7 +193,7 @@ body.club #btnFull{display:inline-block}
     <div class="attn" id="attnBuy"><span style="font-size:20px">⚠️</span><div><b>Внимание!</b> При покупке обращайте внимание на цену: покупка только лимитированными заявками.</div></div>
     <div class="grid k4 hide" id="posStats" style="margin-bottom:14px"></div>
     <div class="card"><h3>Облигации</h3><div class="muted" style="font-size:13px;margin:-4px 0 12px">Доходность — актуальная эффективная доходность по текущей цене на Московской бирже: если покупать облигацию сейчас, а не по нашей цене покупки. Считается к оферте, если она есть, иначе к погашению. Обновляется при каждом открытии страницы; в выходные — по цене закрытия последних торгов.</div><div class="tw" id="bondTable" style="max-height:none"></div>
-      <div class="fn">Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению; «расчёт» — посчитана нами по цене и купону, когда биржа не даёт её к оферте или бумаги нет на Мосбирже (например, торгуется на СПБ бирже — тогда цена из Snowball).<br><span class="tag fl">плавающий купон</span> — доходность = ключевая ставка (или RUONIA) + спред выпуска; пересчитывается при каждом изменении ставки.<br>Изменение цены — от средней цены покупки, без учёта купонов.<br>¹ Рейтинг и полная доходность (с учётом полученных купонов) — данные Snowball.</div>
+      <div class="fn">Цена, НКД, доходность и дюрация — данные Московской биржи на момент открытия страницы. Доходность эффективная: к оферте, если она есть, иначе к погашению; «расчёт» — посчитана нами по цене и купону, когда биржа не даёт её к оферте или бумаги нет на Мосбирже (например, торгуется на СПБ бирже — тогда цена из указанного источника, иначе из Snowball).<br><span class="tag fl">плавающий купон</span> — доходность = ключевая ставка (или RUONIA) + спред выпуска; пересчитывается при каждом изменении ставки.<br>Изменение цены — от средней цены покупки, без учёта купонов.<br>¹ Рейтинг и полная доходность (с учётом полученных купонов) — данные Snowball.</div>
     </div>
     <div class="card" style="margin-top:14px" id="stockCard"><h3>Акции</h3><div class="tw" id="stockTable" style="max-height:none"></div>
       <div class="fn">Цена — котировка Московской биржи на момент открытия страницы.<br>¹ Дивидендная доходность, полная доходность с учётом дивидендов и дивидендный рейтинг (0–100, выше — надёжнее) — данные Snowball.</div>
@@ -336,6 +336,8 @@ function parse(raw){
   p.it={upd:String(g('Обновлено')||''), value:num(g('Стоимость')), invested:num(g('Внесено')), retAbs:num(g('Полная доходность, ₽')), retPct:num(g('Полная доходность, %')),
     got:num(g('Получено')), fc:num(g('Прогноз')), fcY:num(g('Доходность выплат')), cash:num(g('Свободные')), ytd:num(g('Доходность с начала')), y1:num(g('Доходность за 12')),
     key:num(g('Ключевая ставка')), keyDate:normDate(g('Ставка: решение')), keyNext:normDate(g('Ставка: следующее'))};
+  p.it.extPx={}; // цены бумаг вне Мосбиржи (например, СПБ биржа), строки «Цена вне Мосбиржи <ISIN>, %»
+  for(const r of Ig){ const k=String(r[0]||''); const mm=k.match(/^Цена вне Мосбиржи\s+((?:RU|SU)\w+)/i); if(mm&&isFinite(num(r[1]))) p.it.extPx[mm[1]]={pct:num(r[1]), src:String(r[2]||'').trim()}; }
   p.contrib.sort((a,b)=>a.d<b.d?-1:1);
   // события Snowball
   const E=S['Сайт · события']||[]; p.events=[];
@@ -472,6 +474,7 @@ function enrich(){ // цены биржи, стоимость, доли
       x.face=m&&m.face||1000; x.pricePct=x.mkt?m.price:NaN; x.nkd=m?m.nkd:NaN; x.offMoex=!!(MKT&&!m);
       if(!x.mkt && isFinite(x.sb.price) && isFinite(x.fx)){ // нет на Мосбирже (например, СПБ биржа): цена Snowball в ₽ за бумагу → % номинала
         const fc=[100,1000].map(f=>({f,p:x.sb.price/(f*x.fx)*100})).sort((a,b)=>Math.abs(a.p-100)-Math.abs(b.p-100))[0]; x.face=fc.f; x.pricePct=fc.p; }
+      const ext=!x.mkt&&(P.it.extPx||{})[x.t]; if(ext){ x.pricePct=ext.pct; x.extSrc=ext.src||'внешний источник'; }
       x.val=x.mkt&&isFinite(x.fx)? x.q*(x.pricePct/100*x.face+(isFinite(x.nkd)?x.nkd:0))*x.fx : x.sb.val;
       x.chg=isFinite(x.avg)&&isFinite(x.pricePct)? (x.pricePct/x.avg-1)*100 : x.sb.chg;
       x.y=m&&isFinite(m.y)?m.y:NaN; x.yFrom='iss';
@@ -651,7 +654,7 @@ function renderPositions(){
   renderPosStats();
   const bonds=P.pos.filter(x=>x.kind==='bond').map(x=>Object.assign(x,{_ret:x.sb.ret,_got:x.sb.got,_rate:(()=>{ const a=rating(x.sb.rating); return a!=='—'?a:((refOf(x.t)||{}).rating||manRating(x.t)||'—'); })(),_date:x.offer||x.mat}));
   sortable($('#bondTable'),[
-    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}${o.offMoex?' · нет на Мосбирже, цена Snowball':''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
+    {k:'name',h:'Облигация',l:1,c:'c-name',f:o=>`<b>${esc(o.name)}</b><span class="sub">${esc(o.t)} · ${esc(o.cat)}${o.cur&&o.cur!=='RUB'?' · номинал в '+CURN[o.cur]:''}${o.offMoex?(o.extSrc?' · нет на Мосбирже, цена: '+esc(o.extSrc):' · нет на Мосбирже, цена Snowball'):''}</span>${isFloat(o)?'<span class="tag fl" style="margin:3px 0 0">плавающий купон</span>':''}`},
     {k:'status',h:'Статус',l:1,f:o=>stBadge(o.status)},
     {k:'q',h:'Шт',f:o=>fmt(o.q)},
     {k:'avg',h:'Ср. цена, %',f:o=>fmt(o.avg,2)},
