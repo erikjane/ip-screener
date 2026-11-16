@@ -21,13 +21,13 @@
    "opened": "2026-11-12",
    "entry": 38.83,
    "stop": 40.496071,
-   "days": 1,
+   "days": 4,
    "stop_pct": -4.3,
    "best": 38.83,
-   "last_price": 39.28,
-   "current_pct": -1.16,
-   "processed": "2026-11-13",
-   "last_date": "2026-11-13"
+   "last_price": 39.25,
+   "current_pct": -1.08,
+   "processed": "2026-11-16",
+   "last_date": "2026-11-16"
   },
   {
    "ref_price": 0.5273,
@@ -50,13 +50,13 @@
    "opened": "2026-11-12",
    "entry": 0.529,
    "stop": 0.496504,
-   "days": 1,
+   "days": 4,
    "stop_pct": -6.1,
    "best": 0.55,
-   "last_price": 0.5315,
-   "current_pct": 0.47,
-   "processed": "2026-11-13",
-   "last_date": "2026-11-13"
+   "last_price": 0.5327,
+   "current_pct": 0.7,
+   "processed": "2026-11-16",
+   "last_date": "2026-11-16"
   },
   {
    "ref_price": 298.51,
@@ -79,13 +79,13 @@
    "opened": "2026-11-12",
    "entry": 298.49,
    "stop": 303.971429,
-   "days": 1,
+   "days": 4,
    "stop_pct": -1.8,
-   "best": 298.49,
-   "last_price": 295.42,
+   "best": 295.43,
+   "last_price": 295.43,
    "current_pct": 1.03,
-   "processed": "2026-11-13",
-   "last_date": "2026-11-13"
+   "processed": "2026-11-16",
+   "last_date": "2026-11-16"
   },
   {
    "ref_price": 1079.6,
@@ -108,11 +108,13 @@
    "opened": "2026-11-14",
    "entry": 1081.8,
    "stop": 1055.571429,
-   "days": 0,
+   "days": 2,
    "stop_pct": -2.4,
-   "best": 1081.8,
-   "last_price": 1076.6,
-   "current_pct": -0.48
+   "best": 1088,
+   "last_price": 1077,
+   "current_pct": -0.44,
+   "processed": "2026-11-16",
+   "last_date": "2026-11-16"
   },
   {
    "ref_price": 62.295,
@@ -135,14 +137,16 @@
    "opened": "2026-11-14",
    "entry": 62.32,
    "stop": 64.380357,
-   "days": 0,
+   "days": 2,
    "stop_pct": -3.3,
-   "best": 62.32,
-   "last_price": 60.73,
-   "current_pct": 2.55
+   "best": 60.78,
+   "last_price": 60.78,
+   "current_pct": 2.47,
+   "processed": "2026-11-16",
+   "last_date": "2026-11-16"
   }
  ],
- "updated_night": "2026-11-14 04:32",
+ "updated_night": "2026-11-17 00:10",
  "stats": {
   "total": 5,
   "open": 5,
