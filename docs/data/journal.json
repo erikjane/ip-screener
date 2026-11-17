@@ -18,8 +18,8 @@
     "откат к EMA200 292.17 (+0.1%), наклон вверх — откат в восходящем тренде"
    ],
    "status": "открыт",
-   "current_pct": 2.09,
-   "last_price": 298.54,
+   "current_pct": 2.1,
+   "last_price": 298.56,
    "last_date": "2026-11-17",
    "days": 6,
    "opened_at": "2026-11-11 10:30",
@@ -70,8 +70,8 @@
     "на поддержке 3361.50 (4 касания, до уровня 0.8%)"
    ],
    "status": "открыт",
-   "current_pct": 0.58,
-   "last_price": 3408.0,
+   "current_pct": 0.71,
+   "last_price": 3412.5,
    "last_date": "2026-11-17",
    "days": 6,
    "opened_at": "2026-11-11 10:30",
@@ -292,8 +292,8 @@
     "на поддержке 1.32 (2 касания, до уровня 1.2%)"
    ],
    "status": "открыт",
-   "current_pct": 2.22,
-   "last_price": 1.361,
+   "current_pct": 2.48,
+   "last_price": 1.3645,
    "last_date": "2026-11-17",
    "days": 6,
    "opened_at": "2026-11-11 11:33",
@@ -522,8 +522,8 @@
     "пробой сопротивления 701.80 2026-11-11 на объёме ×2.0"
    ],
    "status": "открыт",
-   "current_pct": -2.02,
-   "last_price": 697.4,
+   "current_pct": -2.14,
+   "last_price": 696.6,
    "last_date": "2026-11-17",
    "days": 6,
    "last_time": "23:48"
@@ -548,8 +548,8 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": 3.71,
-   "last_price": 292.08,
+   "current_pct": 3.74,
+   "last_price": 292.14,
    "last_date": "2026-11-17",
    "days": 6,
    "last_time": "23:48"
@@ -574,8 +574,8 @@
     "бычья дивергенция (2026-10-30 → 2026-11-03)"
    ],
    "status": "открыт",
-   "current_pct": 1.29,
-   "last_price": 0.6887,
+   "current_pct": 1.22,
+   "last_price": 0.6882,
    "last_date": "2026-11-17",
    "days": 6,
    "last_time": "23:48"
@@ -599,8 +599,8 @@
     "пробой сопротивления 1094.47 2026-11-11 на объёме ×2.3"
    ],
    "status": "открыт",
-   "current_pct": -1.32,
-   "last_price": 1118.9,
+   "current_pct": -1.37,
+   "last_price": 1118.4,
    "last_date": "2026-11-17",
    "days": 6,
    "last_time": "23:48"
@@ -653,8 +653,8 @@
     "пробой сопротивления 179.45 2026-11-12 на объёме ×2.0"
    ],
    "status": "открыт",
-   "current_pct": 0.47,
-   "last_price": 183.25,
+   "current_pct": 0.52,
+   "last_price": 183.35,
    "last_date": "2026-11-17",
    "days": 5,
    "last_time": "23:48"
@@ -678,8 +678,8 @@
     "пробой сопротивления 59.06 2026-11-12 на объёме ×6.9"
    ],
    "status": "открыт",
-   "current_pct": -1.51,
-   "last_price": 61.055,
+   "current_pct": -1.43,
+   "last_price": 61.105,
    "last_date": "2026-11-17",
    "days": 5,
    "last_time": "23:48"
@@ -703,8 +703,8 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.9"
    ],
    "status": "открыт",
-   "current_pct": -1.51,
-   "last_price": 61.055,
+   "current_pct": -1.43,
+   "last_price": 61.105,
    "last_date": "2026-11-17",
    "days": 5,
    "last_time": "23:48"
@@ -787,8 +787,8 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-05)"
    ],
    "status": "открыт",
-   "current_pct": 0.6,
-   "last_price": 38.06,
+   "current_pct": 0.71,
+   "last_price": 38.02,
    "last_date": "2026-11-17",
    "days": 4,
    "last_time": "23:48"
@@ -841,8 +841,8 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.2"
    ],
    "status": "открыт",
-   "current_pct": 5.32,
-   "last_price": 304.8,
+   "current_pct": 5.25,
+   "last_price": 304.6,
    "last_date": "2026-11-17",
    "days": 4,
    "last_time": "23:48"
@@ -866,8 +866,8 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": 2.51,
-   "last_price": 464.9,
+   "current_pct": 2.43,
+   "last_price": 464.5,
    "last_date": "2026-11-17",
    "days": 4,
    "last_time": "23:48"
@@ -891,8 +891,8 @@
     "рост +5.1% за день — первый за 20 дней, объём ×3.5"
    ],
    "status": "открыт",
-   "current_pct": -2.61,
-   "last_price": 337.75,
+   "current_pct": -2.58,
+   "last_price": 337.85,
    "last_date": "2026-11-17",
    "days": 4,
    "last_time": "23:48"
@@ -917,8 +917,8 @@
     "пробой сопротивления 336.50 2026-11-13 на объёме ×3.5, был ретест уровня"
    ],
    "status": "открыт",
-   "current_pct": -0.87,
-   "last_price": 337.75,
+   "current_pct": -0.84,
+   "last_price": 337.85,
    "last_date": "2026-11-17",
    "days": 1,
    "last_time": "23:48"
@@ -972,8 +972,8 @@
     "пробой сопротивления 10.74 2026-11-16 на объёме ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -1.42,
-   "last_price": 11.455,
+   "current_pct": -1.64,
+   "last_price": 11.43,
    "last_date": "2026-11-17",
    "days": 1,
    "last_time": "23:48"
@@ -997,16 +997,112 @@
     "рост +7.2% за день — первый за 20 дней, объём ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -1.42,
-   "last_price": 11.455,
+   "current_pct": -1.64,
+   "last_price": 11.43,
    "last_date": "2026-11-17",
    "days": 1,
    "last_time": "23:48"
+  },
+  {
+   "id": "2026-11-17-ALRS-buy-ta",
+   "strategy": "ta",
+   "ticker": "ALRS",
+   "name": "АЛРОСА ао",
+   "side": "buy",
+   "opened": "2026-11-17",
+   "opened_at": "2026-11-17 23:59",
+   "entry": 24.07,
+   "stop": 22.5175,
+   "target": 28.884,
+   "stop_pct": -6.4,
+   "target_pct": 20.0,
+   "rating": "⭐",
+   "comment": "EMA200",
+   "signals": [
+    "откат к EMA200 23.87 (+0.8%), наклон вниз — слабее"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 24.07,
+   "last_date": "2026-11-17",
+   "days": 0
+  },
+  {
+   "id": "2026-11-17-BELU-buy-ta",
+   "strategy": "ta",
+   "ticker": "BELU",
+   "name": "НоваБев ао",
+   "side": "buy",
+   "opened": "2026-11-17",
+   "opened_at": "2026-11-17 23:59",
+   "entry": 304.6,
+   "stop": 277.596,
+   "target": 365.52,
+   "stop_pct": -8.9,
+   "target_pct": 20.0,
+   "rating": "⭐",
+   "comment": "пробой на объёме",
+   "signals": [
+    "пробой сопротивления 280.40 2026-11-13 на объёме ×6.2"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 304.6,
+   "last_date": "2026-11-17",
+   "days": 0
+  },
+  {
+   "id": "2026-11-17-FIXR-buy-ta",
+   "strategy": "ta",
+   "ticker": "FIXR",
+   "name": "Фикс Прайс",
+   "side": "buy",
+   "opened": "2026-11-17",
+   "opened_at": "2026-11-17 23:59",
+   "entry": 0.6564,
+   "stop": 0.6409,
+   "target": 0.6823,
+   "stop_pct": -2.4,
+   "target_pct": 3.9,
+   "rating": "⭐",
+   "comment": "поддержка",
+   "signals": [
+    "на поддержке 0.65 (2 касания, до уровня 1.4%)"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 0.6564,
+   "last_date": "2026-11-17",
+   "days": 0
+  },
+  {
+   "id": "2026-11-17-AQUA-buy-momentum",
+   "strategy": "momentum",
+   "ticker": "AQUA",
+   "name": "ИНАРКТИКА",
+   "side": "buy",
+   "opened": "2026-11-17",
+   "opened_at": "2026-11-17 23:59",
+   "entry": 369.0,
+   "stop": 337.106,
+   "target": 432.788,
+   "stop_pct": -8.6,
+   "target_pct": 17.3,
+   "rating": "🚀",
+   "comment": "Импульс +8.0% на объёме ×12.6",
+   "signals": [
+    "рост +8.0% за день — первый за 20 дней, объём ×12.6"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 369.0,
+   "last_date": "2026-11-17",
+   "days": 0
   }
  ],
  "stats": {
-  "total": 37,
-  "open": 18,
+  "total": 41,
+  "open": 22,
   "closed": 19,
   "win_rate": 21.1,
   "avg_result": -0.71,
@@ -1018,8 +1114,8 @@
   "win_rate_sell": 8.3,
   "by_strategy": {
    "ta": {
-    "total": 32,
-    "open": 13,
+    "total": 35,
+    "open": 16,
     "closed": 19,
     "win_rate": 21.1,
     "avg_result": -0.71,
@@ -1031,12 +1127,12 @@
     "win_rate_sell": 8.3
    },
    "momentum": {
-    "total": 5,
-    "open": 5,
+    "total": 6,
+    "open": 6,
     "closed": 0
    }
   }
  },
- "updated_utc": "2026-11-16 21:09",
+ "updated_utc": "2026-11-17 21:11",
  "updated_live": "2026-11-17 23:48"
 }

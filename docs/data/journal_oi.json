@@ -147,13 +147,32 @@
    "current_pct": 1.96,
    "processed": "2026-11-17",
    "last_date": "2026-11-17"
+  },
+  {
+   "ref_price": 118.19,
+   "atr": 2.7171428571428575,
+   "net": 306856,
+   "long": 408662,
+   "short": 101806,
+   "id": "2026-11-17-GAZP-sell-oi",
+   "strategy": "oi",
+   "ticker": "GAZP",
+   "name": "ГАЗПРОМ ао",
+   "code": "GZ",
+   "side": "sell",
+   "signal_date": "2026-11-17",
+   "status": "ждёт входа",
+   "rel_pct": 11.7,
+   "d_net": 53909,
+   "d_net_mln": 637.2,
+   "comment": "Физлица нарастили лонг: +53 909 контр. (+11.7% позиции)"
   }
  ],
- "updated_night": "2026-11-17 07:03",
+ "updated_night": "2026-11-18 00:11",
  "stats": {
-  "total": 5,
+  "total": 6,
   "open": 5,
-  "pending": 0,
+  "pending": 1,
   "closed": 0
  },
  "params": {
