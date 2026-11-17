@@ -152,9 +152,9 @@
    "comment": "Объём ×6.8 нормы, покупатели 83%",
    "status": "открыт",
    "days": 1,
-   "last_price": 1011.5,
+   "last_price": 1014.5,
    "last_date": "2026-11-17",
-   "current_pct": 1.97,
+   "current_pct": 2.27,
    "processed": "2026-11-16",
    "best_close": 1012.5
   },
@@ -176,9 +176,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 40%",
    "status": "открыт",
    "days": 1,
-   "last_price": 23.3,
+   "last_price": 23.28,
    "last_date": "2026-11-17",
-   "current_pct": 5.21,
+   "current_pct": 5.29,
    "processed": "2026-11-16",
    "best_close": 23.54
   },
@@ -200,9 +200,9 @@
    "comment": "Объём ×5.2 нормы, покупатели 64%",
    "status": "открыт",
    "days": 1,
-   "last_price": 54.3,
+   "last_price": 54.25,
    "last_date": "2026-11-17",
-   "current_pct": -1.81,
+   "current_pct": -1.9,
    "processed": "2026-11-16",
    "best_close": 55.3
   },
@@ -224,9 +224,9 @@
    "comment": "Объём ×5.7 нормы, покупатели 68%",
    "status": "открыт",
    "days": 1,
-   "last_price": 302.6,
+   "last_price": 302.8,
    "last_date": "2026-11-17",
-   "current_pct": 7.61,
+   "current_pct": 7.68,
    "processed": "2026-11-16",
    "best_close": 312.4
   },
@@ -248,9 +248,9 @@
    "comment": "Объём ×4.1 нормы, покупатели 77%",
    "status": "открыт",
    "days": 1,
-   "last_price": 461.4,
+   "last_price": 461.65,
    "last_date": "2026-11-17",
-   "current_pct": 3.55,
+   "current_pct": 3.6,
    "processed": "2026-11-16",
    "best_close": 454.3
   },
@@ -272,9 +272,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 68%",
    "status": "открыт",
    "days": 1,
-   "last_price": 70.64,
+   "last_price": 70.72,
    "last_date": "2026-11-17",
-   "current_pct": -0.31,
+   "current_pct": -0.2,
    "processed": "2026-11-16",
    "best_close": 71.6
   },
@@ -296,9 +296,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 60%",
    "status": "открыт",
    "days": 1,
-   "last_price": 336.8,
+   "last_price": 336.6,
    "last_date": "2026-11-17",
-   "current_pct": -2.38,
+   "current_pct": -2.43,
    "processed": "2026-11-16",
    "best_close": 345
   },
@@ -346,9 +346,9 @@
    "comment": "Объём ×423.1 нормы, покупатели 66%",
    "status": "открыт",
    "days": 0,
-   "last_price": 7.49,
+   "last_price": 7.494,
    "last_date": "2026-11-17",
-   "current_pct": -0.93
+   "current_pct": -0.87
   },
   {
    "id": "2026-11-16-EUTR-sell-volume",
@@ -410,11 +410,15 @@
    "buy_share": 63,
    "change_pct": 9.28,
    "comment": "Объём ×6.6 нормы, покупатели 63%",
-   "status": "открыт",
+   "status": "стоп",
    "days": 0,
    "last_price": 90.46,
    "last_date": "2026-11-17",
-   "current_pct": -3.97
+   "current_pct": -3.97,
+   "closed": "2026-11-17",
+   "closed_at": "2026-11-17 12:15",
+   "close_price": 86.664,
+   "result_pct": -8.0
   },
   {
    "id": "2026-11-16-CNRU-buy-volume",
@@ -434,9 +438,9 @@
    "comment": "Объём ×3.2 нормы, покупатели 65%",
    "status": "открыт",
    "days": 0,
-   "last_price": 931.6,
+   "last_price": 931.4,
    "last_date": "2026-11-17",
-   "current_pct": 0.47
+   "current_pct": 0.45
   },
   {
    "id": "2026-11-17-AQUA-buy-volume",
@@ -456,9 +460,9 @@
    "comment": "Объём ×29.2 нормы, покупатели 65%",
    "status": "открыт",
    "days": 0,
-   "last_price": 347.4,
+   "last_price": 349,
    "last_date": "2026-11-17",
-   "current_pct": -0.97
+   "current_pct": -0.51
   },
   {
    "id": "2026-11-17-OGKB-sell-volume",
@@ -478,19 +482,19 @@
    "comment": "Объём ×6.2 нормы, покупатели 42%",
    "status": "открыт",
    "days": 0,
-   "last_price": 0.2475,
+   "last_price": 0.2481,
    "last_date": "2026-11-17",
-   "current_pct": 0.0
+   "current_pct": -0.24
   }
  ],
  "stats": {
   "total": 20,
-  "open": 14,
-  "closed": 6,
+  "open": 13,
+  "closed": 7,
   "win_rate": 0.0,
-  "avg_result": -3.17,
-  "sum_result": -19.01,
-  "стоп": 6,
+  "avg_result": -3.86,
+  "sum_result": -27.01,
+  "стоп": 7,
   "трейлинг": 0,
   "объём против": 0,
   "истёк": 0
@@ -514,5 +518,5 @@
   "against_share": 0.6,
   "cooldown": 7
  },
- "updated": "2026-11-17 12:09"
+ "updated": "2026-11-17 12:19"
 }
