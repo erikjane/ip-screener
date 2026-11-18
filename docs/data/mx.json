@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 06:58",
+ "updated": "2026-11-18 07:08",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -15,27 +15,27 @@
   "start": "2026-11-12",
   "entry": 2497.38,
   "live": true,
-  "current": -0.06
+  "current": 0.12
  },
  "live": null,
- "total": 163.89,
- "live_return": -0.23,
+ "total": 164.38,
+ "live_return": -0.04,
  "maxdd": -12.7,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": 3.9
+  "2026": 4.1
  },
- "index_change": 15.7,
- "index": 2495.86,
+ "index_change": 15.9,
+ "index": 2500.47,
  "flips": [
   {
    "side": "long",
    "start": "2026-11-12",
    "entry": 2497.38,
    "live": true,
-   "current": -0.06
+   "current": 0.12
   },
   {
    "side": "short",
@@ -508,6 +508,20 @@
  ],
  "rows": [
   {
+   "date": "2026-11-18",
+   "intraday": true,
+   "net": 12916,
+   "d1": 227,
+   "d3": -11696,
+   "long": 124238,
+   "short": 111322,
+   "long_num": 4989,
+   "short_num": 3143,
+   "index": 2500.47,
+   "pos": 1,
+   "signal": "long"
+  },
+  {
    "date": "2026-11-17",
    "intraday": false,
    "net": 12689,
@@ -912,20 +926,6 @@
    "index": 2310.65,
    "pos": 1,
    "signal": "short"
-  },
-  {
-   "date": "2026-10-07",
-   "intraday": false,
-   "net": -28275,
-   "d1": 511,
-   "d3": -26195,
-   "long": 90210,
-   "short": 118485,
-   "long_num": 3993,
-   "short_num": 4196,
-   "index": 2338.21,
-   "pos": 1,
-   "signal": "long"
   }
  ],
  "curve": [
@@ -5933,6 +5933,11 @@
    "2026-11-17",
    163.89,
    1
+  ],
+  [
+   "2026-11-18",
+   164.38,
+   1
   ]
  ],
  "live_journal": {
@@ -6006,16 +6011,16 @@
     "manual": true
    }
   ],
-  "last_price": 248150,
-  "last_time": "23:50",
+  "last_price": 248625,
+  "last_time": "07:08",
   "contract_now": "MXZ6",
-  "current": -0.06,
-  "d3_now": -10147,
-  "snap_time": "23:50",
+  "current": 0.13,
+  "d3_now": -11696,
+  "snap_time": "07:05",
   "closed_return": 1.4,
-  "total_return": 1.34,
-  "updated": "2026-11-18 06:58",
+  "total_return": 1.54,
+  "updated": "2026-11-18 07:08",
   "blocked": null,
-  "d1_now": -5670
+  "d1_now": 227
  }
 }

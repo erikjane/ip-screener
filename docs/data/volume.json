@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "updated": "2026-11-18 06:58",
+ "updated": "2026-11-18 07:08",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -23,5 +23,23 @@
  },
  "norm_days": 25,
  "signals": [],
- "anomalies": []
+ "anomalies": [
+  {
+   "ticker": "ALRS",
+   "name": "АЛРОСА",
+   "side": null,
+   "ratio": 5.8,
+   "buy_share": 66,
+   "change_pct": 1.37,
+   "range_pos": 74,
+   "price": 24.4,
+   "value_mln": 120.5,
+   "net_today_mln": 30.7,
+   "net30_mln": 767.2,
+   "day_high": 24.47,
+   "day_low": 24.2,
+   "time": "07:05",
+   "updated": "07:08"
+  }
+ ]
 }
