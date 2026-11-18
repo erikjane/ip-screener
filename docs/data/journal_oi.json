@@ -24,8 +24,8 @@
    "days": 5,
    "stop_pct": -4.3,
    "best": 38.83,
-   "last_price": 38.95,
-   "current_pct": -0.31,
+   "last_price": 38.92,
+   "current_pct": -0.23,
    "processed": "2026-11-17",
    "last_date": "2026-11-17",
    "trailing": true
@@ -54,8 +54,8 @@
    "days": 5,
    "stop_pct": -6.1,
    "best": 0.55,
-   "last_price": 0.551,
-   "current_pct": 4.16,
+   "last_price": 0.5514,
+   "current_pct": 4.23,
    "processed": "2026-11-17",
    "last_date": "2026-11-17",
    "trailing": true
@@ -84,8 +84,8 @@
    "days": 5,
    "stop_pct": -1.8,
    "best": 293.9,
-   "last_price": 297.88,
-   "current_pct": 0.2,
+   "last_price": 297.56,
+   "current_pct": 0.31,
    "processed": "2026-11-17",
    "last_date": "2026-11-17",
    "trailing": true
@@ -114,8 +114,8 @@
    "days": 3,
    "stop_pct": -2.4,
    "best": 1088,
-   "last_price": 1072.6,
-   "current_pct": -0.85,
+   "last_price": 1072.4,
+   "current_pct": -0.87,
    "processed": "2026-11-17",
    "last_date": "2026-11-17"
   },
@@ -172,8 +172,8 @@
    "days": 0,
    "stop_pct": -3.4,
    "best": 118.21,
-   "last_price": 117.09,
-   "current_pct": 0.95
+   "last_price": 116.99,
+   "current_pct": 1.03
   }
  ],
  "updated_night": "2026-11-18 05:59",
