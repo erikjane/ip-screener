@@ -176,9 +176,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 40%",
    "status": "открыт",
    "days": 2,
-   "last_price": 23.06,
+   "last_price": 23.08,
    "last_date": "2026-11-18",
-   "current_pct": 6.18,
+   "current_pct": 6.1,
    "processed": "2026-11-17",
    "best_close": 23.54
   },
@@ -200,9 +200,9 @@
    "comment": "Объём ×5.2 нормы, покупатели 64%",
    "status": "открыт",
    "days": 2,
-   "last_price": 53.7,
+   "last_price": 53.75,
    "last_date": "2026-11-18",
-   "current_pct": -2.89,
+   "current_pct": -2.8,
    "processed": "2026-11-17",
    "best_close": 55.3
   },
@@ -224,9 +224,9 @@
    "comment": "Объём ×5.7 нормы, покупатели 68%",
    "status": "открыт",
    "days": 2,
-   "last_price": 307.6,
+   "last_price": 308.6,
    "last_date": "2026-11-18",
-   "current_pct": 9.39,
+   "current_pct": 9.74,
    "processed": "2026-11-17",
    "best_close": 312.4
   },
@@ -248,9 +248,9 @@
    "comment": "Объём ×4.1 нормы, покупатели 77%",
    "status": "открыт",
    "days": 2,
-   "last_price": 456.3,
+   "last_price": 456.1,
    "last_date": "2026-11-18",
-   "current_pct": 2.4,
+   "current_pct": 2.36,
    "processed": "2026-11-17",
    "best_close": 464.5
   },
@@ -272,9 +272,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 68%",
    "status": "открыт",
    "days": 2,
-   "last_price": 70.16,
+   "last_price": 70.08,
    "last_date": "2026-11-18",
-   "current_pct": -0.99,
+   "current_pct": -1.1,
    "processed": "2026-11-17",
    "best_close": 71.6
   },
@@ -296,9 +296,9 @@
    "comment": "Объём ×3.0 нормы, покупатели 60%",
    "status": "открыт",
    "days": 2,
-   "last_price": 332.6,
+   "last_price": 332.35,
    "last_date": "2026-11-18",
-   "current_pct": -3.59,
+   "current_pct": -3.67,
    "processed": "2026-11-17",
    "best_close": 345
   },
@@ -346,9 +346,9 @@
    "comment": "Объём ×423.1 нормы, покупатели 66%",
    "status": "открыт",
    "days": 1,
-   "last_price": 7.352,
+   "last_price": 7.358,
    "last_date": "2026-11-18",
-   "current_pct": -2.75,
+   "current_pct": -2.67,
    "processed": "2026-11-17",
    "best_close": 7.56
   },
@@ -394,9 +394,9 @@
    "comment": "Объём ×24.7 нормы, покупатели 59%",
    "status": "открыт",
    "days": 1,
-   "last_price": 48.3,
+   "last_price": 48.31,
    "last_date": "2026-11-18",
-   "current_pct": -2.97,
+   "current_pct": -2.95,
    "processed": "2026-11-17",
    "best_close": 49.78
   },
@@ -468,9 +468,9 @@
    "comment": "Объём ×29.2 нормы, покупатели 65%",
    "status": "открыт",
    "days": 0,
-   "last_price": 364.6,
+   "last_price": 364.5,
    "last_date": "2026-11-18",
-   "current_pct": 3.93
+   "current_pct": 3.91
   },
   {
    "id": "2026-11-17-OGKB-sell-volume",
@@ -490,9 +490,9 @@
    "comment": "Объём ×6.2 нормы, покупатели 42%",
    "status": "открыт",
    "days": 0,
-   "last_price": 0.2519,
+   "last_price": 0.2521,
    "last_date": "2026-11-18",
-   "current_pct": -1.78
+   "current_pct": -1.86
   },
   {
    "id": "2026-11-17-GCHE-buy-volume",
@@ -586,9 +586,9 @@
    "comment": "Объём ×183.4 нормы, покупатели 61%",
    "status": "открыт",
    "days": 0,
-   "last_price": 731.3,
+   "last_price": 728.2,
    "last_date": "2026-11-18",
-   "current_pct": 2.57
+   "current_pct": 2.13
   }
  ],
  "stats": {
@@ -622,5 +622,5 @@
   "against_share": 0.6,
   "cooldown": 7
  },
- "updated": "2026-11-18 22:09"
+ "updated": "2026-11-18 22:19"
 }
