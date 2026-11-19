@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "updated": "2026-11-19 07:09",
+ "updated": "2026-11-19 07:19",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -23,5 +23,40 @@
  },
  "norm_days": 25,
  "signals": [],
- "anomalies": []
+ "anomalies": [
+  {
+   "ticker": "LEAS",
+   "name": "Европлан",
+   "side": null,
+   "ratio": 384.5,
+   "buy_share": 31,
+   "change_pct": -1.07,
+   "range_pos": 20,
+   "price": 721.3,
+   "value_mln": 45.1,
+   "net_today_mln": -15.4,
+   "net30_mln": 53.2,
+   "day_high": 734.8,
+   "day_low": 718,
+   "time": "07:15",
+   "updated": "07:19"
+  },
+  {
+   "ticker": "HYDR",
+   "name": "РусГидро",
+   "side": null,
+   "ratio": 6.9,
+   "buy_share": 31,
+   "change_pct": -0.86,
+   "range_pos": 46,
+   "price": 0.5637,
+   "value_mln": 67.1,
+   "net_today_mln": -22.8,
+   "net30_mln": 281.2,
+   "day_high": 0.568,
+   "day_low": 0.56,
+   "time": "07:15",
+   "updated": "07:19"
+  }
+ ]
 }
