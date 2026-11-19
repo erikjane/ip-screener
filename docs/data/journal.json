@@ -18,12 +18,12 @@
     "откат к EMA200 292.17 (+0.1%), наклон вверх — откат в восходящем тренде"
    ],
    "status": "открыт",
-   "current_pct": 1.72,
-   "last_price": 297.45,
+   "current_pct": 1.71,
+   "last_price": 297.41,
    "last_date": "2026-11-19",
    "days": 8,
    "opened_at": "2026-11-11 10:30",
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-RTKM-buy",
@@ -70,12 +70,12 @@
     "на поддержке 3361.50 (4 касания, до уровня 0.8%)"
    ],
    "status": "открыт",
-   "current_pct": 0.3,
-   "last_price": 3398.5,
+   "current_pct": 0.28,
+   "last_price": 3398.0,
    "last_date": "2026-11-19",
    "days": 8,
    "opened_at": "2026-11-11 10:30",
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-RUAL-buy",
@@ -292,12 +292,12 @@
     "на поддержке 1.32 (2 касания, до уровня 1.2%)"
    ],
    "status": "открыт",
-   "current_pct": 1.09,
-   "last_price": 1.346,
+   "current_pct": 1.16,
+   "last_price": 1.347,
    "last_date": "2026-11-19",
    "days": 8,
    "opened_at": "2026-11-11 11:33",
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-BAZA-sell-ta",
@@ -318,12 +318,12 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-02)"
    ],
    "status": "открыт",
-   "current_pct": 1.6,
-   "last_price": 147.5,
+   "current_pct": 1.64,
+   "last_price": 147.44,
    "last_date": "2026-11-19",
    "days": 8,
    "opened_at": "2026-11-11 11:42",
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-HEAD-sell-ta",
@@ -522,11 +522,11 @@
     "пробой сопротивления 701.80 2026-11-11 на объёме ×2.0"
    ],
    "status": "открыт",
-   "current_pct": -2.3,
-   "last_price": 695.4,
+   "current_pct": -2.39,
+   "last_price": 694.8,
    "last_date": "2026-11-19",
    "days": 8,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-T-buy-ta",
@@ -548,11 +548,11 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": 3.93,
-   "last_price": 292.7,
+   "current_pct": 3.8,
+   "last_price": 292.32,
    "last_date": "2026-11-19",
    "days": 8,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-UGLD-buy-ta",
@@ -574,11 +574,11 @@
     "бычья дивергенция (2026-10-30 → 2026-11-03)"
    ],
    "status": "открыт",
-   "current_pct": 0.03,
-   "last_price": 0.6801,
+   "current_pct": 0.12,
+   "last_price": 0.6807,
    "last_date": "2026-11-19",
    "days": 8,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-11-NVTK-buy-ta",
@@ -599,11 +599,11 @@
     "пробой сопротивления 1094.47 2026-11-11 на объёме ×2.3"
    ],
    "status": "открыт",
-   "current_pct": -3.33,
-   "last_price": 1096.1,
+   "current_pct": -3.34,
+   "last_price": 1096.0,
    "last_date": "2026-11-19",
    "days": 8,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-12-NLMK-sell-ta",
@@ -653,11 +653,11 @@
     "пробой сопротивления 179.45 2026-11-12 на объёме ×2.0"
    ],
    "status": "открыт",
-   "current_pct": 0.99,
-   "last_price": 184.2,
+   "current_pct": 0.9,
+   "last_price": 184.05,
    "last_date": "2026-11-19",
    "days": 7,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-12-VTBR-buy-ta",
@@ -678,11 +678,11 @@
     "пробой сопротивления 59.06 2026-11-12 на объёме ×6.9"
    ],
    "status": "открыт",
-   "current_pct": -1.97,
-   "last_price": 60.77,
+   "current_pct": -2.06,
+   "last_price": 60.71,
    "last_date": "2026-11-19",
    "days": 7,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-12-VTBR-buy-momentum",
@@ -703,11 +703,11 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.9"
    ],
    "status": "открыт",
-   "current_pct": -1.97,
-   "last_price": 60.77,
+   "current_pct": -2.06,
+   "last_price": 60.71,
    "last_date": "2026-11-19",
    "days": 7,
-   "last_time": "09:40"
+   "last_time": "09:50"
   },
   {
    "id": "2026-11-13-SVCB-buy-ta",
@@ -787,11 +787,11 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-05)"
    ],
    "status": "открыт",
-   "current_pct": 5.95,
-   "last_price": 36.01,
+   "current_pct": 5.93,
+   "last_price": 36.02,
    "last_date": "2026-11-19",
    "days": 6,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-13-TATNP-buy-ta",
@@ -841,11 +841,11 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.2"
    ],
    "status": "открыт",
-   "current_pct": 6.36,
-   "last_price": 307.8,
+   "current_pct": 6.7,
+   "last_price": 308.8,
    "last_date": "2026-11-19",
    "days": 6,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-13-PRMD-buy-momentum",
@@ -866,11 +866,11 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": 1.84,
-   "last_price": 461.85,
+   "current_pct": 1.55,
+   "last_price": 460.55,
    "last_date": "2026-11-19",
    "days": 6,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-13-ENPG-buy-momentum",
@@ -978,11 +978,11 @@
     "пробой сопротивления 10.74 2026-11-16 на объёме ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -2.02,
-   "last_price": 11.385,
+   "current_pct": -2.24,
+   "last_price": 11.36,
    "last_date": "2026-11-19",
    "days": 3,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-16-SVCB-buy-momentum",
@@ -1003,11 +1003,11 @@
     "рост +7.2% за день — первый за 20 дней, объём ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -2.02,
-   "last_price": 11.385,
+   "current_pct": -2.24,
+   "last_price": 11.36,
    "last_date": "2026-11-19",
    "days": 3,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-17-ALRS-buy-ta",
@@ -1032,7 +1032,7 @@
    "last_price": 24.07,
    "last_date": "2026-11-19",
    "days": 2,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-17-BELU-buy-ta",
@@ -1053,11 +1053,11 @@
     "пробой сопротивления 280.40 2026-11-13 на объёме ×6.2"
    ],
    "status": "открыт",
-   "current_pct": 1.18,
-   "last_price": 308.2,
+   "current_pct": 1.44,
+   "last_price": 309.0,
    "last_date": "2026-11-19",
    "days": 2,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-17-FIXR-buy-ta",
@@ -1078,11 +1078,11 @@
     "на поддержке 0.65 (2 касания, до уровня 1.4%)"
    ],
    "status": "открыт",
-   "current_pct": -1.43,
-   "last_price": 0.647,
+   "current_pct": -1.26,
+   "last_price": 0.6481,
    "last_date": "2026-11-19",
    "days": 2,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-17-AQUA-buy-momentum",
@@ -1103,11 +1103,11 @@
     "рост +8.0% за день — первый за 20 дней, объём ×12.6"
    ],
    "status": "открыт",
-   "current_pct": -2.17,
-   "last_price": 361.0,
+   "current_pct": -2.11,
+   "last_price": 361.2,
    "last_date": "2026-11-19",
    "days": 2,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-18-ENPG-sell-ta",
@@ -1129,11 +1129,11 @@
     "пробой EMA200 338.45 вниз, 2 закрытия ниже"
    ],
    "status": "открыт",
-   "current_pct": 0.15,
-   "last_price": 331.25,
+   "current_pct": -0.17,
+   "last_price": 332.3,
    "last_date": "2026-11-19",
    "days": 1,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-18-RTKMP-buy-ta",
@@ -1158,7 +1158,7 @@
    "last_price": 48.35,
    "last_date": "2026-11-19",
    "days": 1,
-   "last_time": "09:41"
+   "last_time": "09:51"
   },
   {
    "id": "2026-11-18-LEAS-buy-momentum",
@@ -1179,11 +1179,11 @@
     "рост +8.1% за день — первый за 20 дней, объём ×66.5"
    ],
    "status": "открыт",
-   "current_pct": 0.04,
-   "last_price": 729.4,
+   "current_pct": -0.56,
+   "last_price": 725.0,
    "last_date": "2026-11-19",
    "days": 1,
-   "last_time": "09:41"
+   "last_time": "09:51"
   }
  ],
  "stats": {
@@ -1227,5 +1227,5 @@
   }
  },
  "updated_utc": "2026-11-18 21:11",
- "updated_live": "2026-11-19 09:41"
+ "updated_live": "2026-11-19 09:51"
 }
