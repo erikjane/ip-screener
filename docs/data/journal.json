@@ -1196,11 +1196,137 @@
    "last_date": "2026-11-19",
    "days": 1,
    "last_time": "23:50"
+  },
+  {
+   "id": "2026-11-19-RTKMP-sell-ta",
+   "strategy": "ta",
+   "ticker": "RTKMP",
+   "name": "Ростел -ап",
+   "side": "sell",
+   "opened": "2026-11-19",
+   "opened_at": "2026-11-19 23:59",
+   "entry": 46.45,
+   "stop": 47.47,
+   "target": 43.2,
+   "stop_pct": -2.2,
+   "target_pct": 7.0,
+   "rating": "⭐⭐⭐",
+   "comment": "сопротивление + ниже EMA200 + разворот RSI",
+   "signals": [
+    "у сопротивления 47.00 (2 касания, до уровня 1.2%)",
+    "отскок вниз от EMA200 46.87 при нисходящем наклоне",
+    "RSI вышел из перекупленности (70 → 53, 2026-11-19)"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 46.45,
+   "last_date": "2026-11-19",
+   "days": 0
+  },
+  {
+   "id": "2026-11-19-IRAO-buy-ta",
+   "strategy": "ta",
+   "ticker": "IRAO",
+   "name": "ИнтерРАОао",
+   "side": "buy",
+   "opened": "2026-11-19",
+   "opened_at": "2026-11-19 23:59",
+   "entry": 2.723,
+   "stop": 2.6589,
+   "target": 3.2528,
+   "stop_pct": -2.4,
+   "target_pct": 19.5,
+   "rating": "⭐⭐",
+   "comment": "поддержка + EMA200 ↑",
+   "signals": [
+    "на поддержке 2.69 (2 касания, до уровня 1.4%)",
+    "откат к EMA200 2.69 (+1.1%), наклон вверх — откат в восходящем тренде"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 2.723,
+   "last_date": "2026-11-19",
+   "days": 0
+  },
+  {
+   "id": "2026-11-19-ROSN-buy-ta",
+   "strategy": "ta",
+   "ticker": "ROSN",
+   "name": "Роснефть",
+   "side": "buy",
+   "opened": "2026-11-19",
+   "opened_at": "2026-11-19 23:59",
+   "entry": 344.25,
+   "stop": 338.7038,
+   "target": 357.65,
+   "stop_pct": -1.6,
+   "target_pct": 3.9,
+   "rating": "⭐⭐",
+   "comment": "поддержка + дивергенция RSI",
+   "signals": [
+    "на поддержке 342.12 (2 касания, до уровня 0.6%)",
+    "бычья дивергенция (2026-11-10 → 2026-11-19)"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 344.25,
+   "last_date": "2026-11-19",
+   "days": 0
+  },
+  {
+   "id": "2026-11-19-MOEX-sell-ta",
+   "strategy": "ta",
+   "ticker": "MOEX",
+   "name": "МосБиржа",
+   "side": "sell",
+   "opened": "2026-11-19",
+   "opened_at": "2026-11-19 23:59",
+   "entry": 162.04,
+   "stop": 165.4229,
+   "target": 157.69,
+   "stop_pct": -2.1,
+   "target_pct": 2.7,
+   "rating": "⭐⭐",
+   "comment": "сопротивление + пробой поддержки",
+   "signals": [
+    "у сопротивления 163.78 (2 касания, до уровня 1.1%)",
+    "пробой поддержки 165.96 2026-11-19 на объёме ×2.3"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 162.04,
+   "last_date": "2026-11-19",
+   "days": 0
+  },
+  {
+   "id": "2026-11-19-SNGSP-buy-ta",
+   "strategy": "ta",
+   "ticker": "SNGSP",
+   "name": "Сургнфгз-п",
+   "side": "buy",
+   "opened": "2026-11-19",
+   "opened_at": "2026-11-19 23:59",
+   "entry": 41.8,
+   "stop": 40.637,
+   "target": 42.9825,
+   "stop_pct": -2.8,
+   "target_pct": 2.8,
+   "rating": "⭐⭐",
+   "comment": "поддержка + EMA200 ↑",
+   "signals": [
+    "на поддержке 41.05 (4 касания, до уровня 1.8%)",
+    "откат к EMA200 41.44 (+0.9%), наклон вверх — откат в восходящем тренде"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 41.8,
+   "last_date": "2026-11-19",
+   "days": 0
   }
  ],
  "stats": {
-  "total": 44,
-  "open": 19,
+  "total": 49,
+  "open": 24,
   "closed": 25,
   "win_rate": 16.0,
   "avg_result": -1.43,
@@ -1212,8 +1338,8 @@
   "win_rate_sell": 8.3,
   "by_strategy": {
    "ta": {
-    "total": 37,
-    "open": 13,
+    "total": 42,
+    "open": 18,
     "closed": 24,
     "win_rate": 16.7,
     "avg_result": -1.26,
@@ -1238,6 +1364,6 @@
    }
   }
  },
- "updated_utc": "2026-11-18 21:11",
+ "updated_utc": "2026-11-19 21:12",
  "updated_live": "2026-11-19 23:50"
 }

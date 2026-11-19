@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19 23:51",
+ "updated": "2026-11-20 00:13",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -15,27 +15,27 @@
   "start": "2026-11-12",
   "entry": 2497.38,
   "live": true,
-  "current": -3.24
+  "current": -3.12
  },
  "live": null,
- "total": 155.5,
- "live_return": -3.4,
- "maxdd": -13.2,
+ "total": 155.81,
+ "live_return": -3.28,
+ "maxdd": -13.1,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": 0.6
+  "2026": 0.7
  },
- "index_change": 12.0,
- "index": 2416.52,
+ "index_change": 12.2,
+ "index": 2419.43,
  "flips": [
   {
    "side": "long",
    "start": "2026-11-12",
    "entry": 2497.38,
    "live": true,
-   "current": -3.24
+   "current": -3.12
   },
   {
    "side": "short",
@@ -509,7 +509,7 @@
  "rows": [
   {
    "date": "2026-11-19",
-   "intraday": true,
+   "intraday": false,
    "net": 7635,
    "d1": 2061,
    "d3": -10724,
@@ -517,7 +517,7 @@
    "short": 113319,
    "long_num": 4895,
    "short_num": 3117,
-   "index": 2416.52,
+   "index": 2419.43,
    "pos": 1,
    "signal": "long"
   },
@@ -5941,7 +5941,7 @@
   ],
   [
    "2026-11-19",
-   155.5,
+   155.81,
    1
   ]
  ],
@@ -6024,7 +6024,7 @@
   "snap_time": "23:50",
   "closed_return": 1.4,
   "total_return": -1.82,
-  "updated": "2026-11-19 23:51",
+  "updated": "2026-11-20 00:13",
   "blocked": null,
   "d1_now": 2061
  }
