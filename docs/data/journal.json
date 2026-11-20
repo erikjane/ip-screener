@@ -327,12 +327,12 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-02)"
    ],
    "status": "открыт",
-   "current_pct": 10.81,
-   "last_price": 133.7,
+   "current_pct": 10.53,
+   "last_price": 134.12,
    "last_date": "2026-11-20",
    "days": 9,
    "opened_at": "2026-11-11 11:42",
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-11-HEAD-sell-ta",
@@ -560,11 +560,11 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": -0.62,
-   "last_price": 279.88,
+   "current_pct": -0.42,
+   "last_price": 280.44,
    "last_date": "2026-11-20",
    "days": 9,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-11-UGLD-buy-ta",
@@ -586,11 +586,11 @@
     "бычья дивергенция (2026-10-30 → 2026-11-03)"
    ],
    "status": "открыт",
-   "current_pct": -4.31,
-   "last_price": 0.6506,
+   "current_pct": -3.87,
+   "last_price": 0.6536,
    "last_date": "2026-11-20",
    "days": 9,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-11-NVTK-buy-ta",
@@ -811,11 +811,11 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-05)"
    ],
    "status": "открыт",
-   "current_pct": 13.69,
-   "last_price": 33.05,
+   "current_pct": 13.53,
+   "last_price": 33.11,
    "last_date": "2026-11-20",
    "days": 7,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-13-TATNP-buy-ta",
@@ -865,11 +865,11 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.2"
    ],
    "status": "открыт",
-   "current_pct": -4.35,
-   "last_price": 276.8,
+   "current_pct": -3.25,
+   "last_price": 280.0,
    "last_date": "2026-11-20",
    "days": 7,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-13-PRMD-buy-momentum",
@@ -890,11 +890,11 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": -1.22,
-   "last_price": 447.95,
+   "current_pct": -1.21,
+   "last_price": 448.0,
    "last_date": "2026-11-20",
    "days": 7,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-13-ENPG-buy-momentum",
@@ -1002,11 +1002,11 @@
     "пробой сопротивления 10.74 2026-11-16 на объёме ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -6.41,
-   "last_price": 10.875,
+   "current_pct": -6.2,
+   "last_price": 10.9,
    "last_date": "2026-11-20",
    "days": 4,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-16-SVCB-buy-momentum",
@@ -1027,11 +1027,11 @@
     "рост +7.2% за день — первый за 20 дней, объём ×8.3"
    ],
    "status": "открыт",
-   "current_pct": -6.41,
-   "last_price": 10.875,
+   "current_pct": -6.2,
+   "last_price": 10.9,
    "last_date": "2026-11-20",
    "days": 4,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-17-ALRS-buy-ta",
@@ -1221,11 +1221,11 @@
     "рост +8.1% за день — первый за 20 дней, объём ×66.5"
    ],
    "status": "открыт",
-   "current_pct": -3.24,
-   "last_price": 705.5,
+   "current_pct": -3.03,
+   "last_price": 707.0,
    "last_date": "2026-11-20",
    "days": 2,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-19-RTKMP-sell-ta",
@@ -1248,11 +1248,11 @@
     "RSI вышел из перекупленности (70 → 53, 2026-11-19)"
    ],
    "status": "открыт",
-   "current_pct": 3.23,
-   "last_price": 44.95,
+   "current_pct": 2.8,
+   "last_price": 45.15,
    "last_date": "2026-11-20",
    "days": 1,
-   "last_time": "19:31"
+   "last_time": "19:41"
   },
   {
    "id": "2026-11-19-IRAO-buy-ta",
@@ -1361,11 +1361,11 @@
     "откат к EMA200 41.44 (+0.9%), наклон вверх — откат в восходящем тренде"
    ],
    "status": "открыт",
-   "current_pct": -2.12,
-   "last_price": 40.915,
+   "current_pct": -1.85,
+   "last_price": 41.025,
    "last_date": "2026-11-20",
    "days": 1,
-   "last_time": "19:31"
+   "last_time": "19:41"
   }
  ],
  "stats": {
@@ -1409,5 +1409,5 @@
   }
  },
  "updated_utc": "2026-11-19 21:12",
- "updated_live": "2026-11-20 19:31"
+ "updated_live": "2026-11-20 19:41"
 }
