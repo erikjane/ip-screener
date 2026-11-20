@@ -1,8 +1,8 @@
 {
- "position": "long",
+ "position": "short",
  "contract": "MXZ6",
- "entry": 248300,
- "entry_time": "2026-11-17 19:48",
+ "entry": 234650,
+ "entry_time": "2026-11-20 12:24",
  "events": [
   {
    "time": "2026-11-12 09:00",
@@ -45,6 +45,23 @@
    "price": 248300,
    "contract": "MXZ6",
    "reason": "физлица за 3 дня нарастили шорт: -10 028 контр. (порог 10 000)"
+  },
+  {
+   "time": "2026-11-20 12:24",
+   "action": "Закрываем лонг MX",
+   "side": "long",
+   "price": 234650,
+   "contract": "MXZ6",
+   "result": -5.5,
+   "reason": "физлица за 3 дня нарастили лонг: +11 528 контр. (порог 10 000)"
+  },
+  {
+   "time": "2026-11-20 12:24",
+   "action": "Открываем шорт MX",
+   "side": "short",
+   "price": 234650,
+   "contract": "MXZ6",
+   "reason": "физлица за 3 дня нарастили лонг: +11 528 контр. (порог 10 000)"
   }
  ],
  "trades": [
@@ -67,17 +84,26 @@
    "close_price": 247250.0,
    "result": 0.95,
    "manual": true
+  },
+  {
+   "side": "long",
+   "contract": "MXZ6",
+   "open_time": "2026-11-17 19:48",
+   "open_price": 248300,
+   "close_time": "2026-11-20 12:24",
+   "close_price": 234650,
+   "result": -5.5
   }
  ],
- "last_price": 234600,
- "last_time": "12:14",
+ "last_price": 234650,
+ "last_time": "12:24",
  "contract_now": "MXZ6",
- "current": -5.52,
- "d3_now": 6136,
- "snap_time": "12:10",
- "closed_return": 1.4,
- "total_return": -4.19,
- "updated": "2026-11-20 12:14",
+ "current": 0.0,
+ "d3_now": 11528,
+ "snap_time": "12:20",
+ "closed_return": -4.17,
+ "total_return": -4.17,
+ "updated": "2026-11-20 12:24",
  "blocked": null,
- "d1_now": 11190
+ "d1_now": 16582
 }
