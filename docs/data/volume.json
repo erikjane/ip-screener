@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "updated": "2026-11-20 07:01",
+ "updated": "2026-11-20 07:11",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -22,6 +22,82 @@
   "cooldown": 7
  },
  "norm_days": 25,
- "signals": [],
- "anomalies": []
+ "signals": [
+  {
+   "ticker": "ALRS",
+   "name": "АЛРОСА",
+   "side": "sell",
+   "ratio": 6.7,
+   "buy_share": 27,
+   "change_pct": -2.34,
+   "range_pos": 34,
+   "price": 22.55,
+   "value_mln": 164.6,
+   "net_today_mln": -67.2,
+   "net30_mln": 373.9,
+   "day_high": 23.09,
+   "day_low": 22.27,
+   "time": "07:10",
+   "updated": "07:11",
+   "first_time": "07:11",
+   "first_price": 22.55,
+   "first_ratio": 6.7
+  },
+  {
+   "ticker": "LSRG",
+   "name": "ЛСР",
+   "side": "buy",
+   "ratio": 5.3,
+   "buy_share": 66,
+   "change_pct": 1.84,
+   "range_pos": 67,
+   "price": 931.8,
+   "value_mln": 34.8,
+   "net_today_mln": 11.4,
+   "net30_mln": -251.8,
+   "day_high": 940,
+   "day_low": 915,
+   "time": "07:10",
+   "updated": "07:11",
+   "first_time": "07:11",
+   "first_price": 931.8,
+   "first_ratio": 5.3
+  }
+ ],
+ "anomalies": [
+  {
+   "ticker": "ALRS",
+   "name": "АЛРОСА",
+   "side": "sell",
+   "ratio": 6.7,
+   "buy_share": 27,
+   "change_pct": -2.34,
+   "range_pos": 34,
+   "price": 22.55,
+   "value_mln": 164.6,
+   "net_today_mln": -67.2,
+   "net30_mln": 373.9,
+   "day_high": 23.09,
+   "day_low": 22.27,
+   "time": "07:10",
+   "updated": "07:11"
+  },
+  {
+   "ticker": "LSRG",
+   "name": "ЛСР",
+   "side": "buy",
+   "ratio": 5.3,
+   "buy_share": 66,
+   "change_pct": 1.84,
+   "range_pos": 67,
+   "price": 931.8,
+   "value_mln": 34.8,
+   "net_today_mln": 11.4,
+   "net30_mln": -251.8,
+   "day_high": 940,
+   "day_low": 915,
+   "time": "07:10",
+   "updated": "07:11"
+  }
+ ]
 }
