@@ -1,3 +1,3 @@
 
 
-Адрес: https://zaletovaea-ui.github.io/ip-screener/rost/
+Адрес: https://erikjane.github.io/ip-screener/rost/
