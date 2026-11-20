@@ -155,7 +155,7 @@ body.club #btnFull{display:inline-block}
     </div>
     <div class="grid k4" id="kpis"></div>
     <div class="grid k2" style="margin-top:14px">
-      <div class="card"><h3>Результаты против индекса MCFTR (индекс Мосбиржи полной доходности)</h3><div id="perf"></div><div class="muted" style="font-size:12px;margin-top:8px">XIRR — среднегодовая доходность с учётом дат взносов.<br>* Расчёт ориентировочный: возможны отклонения ±1–2% в большую или меньшую сторону.</div><div id="top5"></div></div>
+      <div class="card"><h3>Результаты против индекса MCFTR (индекс Мосбиржи полной доходности)</h3><div id="perf"></div><div class="muted" style="font-size:12px;margin-top:8px">Индекс MCFTR считается с теми же пополнениями: каждый взнос «покупает» индекс в день пополнения. Доходность за период = прибыль / (стоимость на начало периода + взносы за период), как в Snowball. XIRR — среднегодовая доходность с учётом дат взносов.<br>* Расчёт ориентировочный: возможны отклонения ±1–2% в большую или меньшую сторону.</div><div id="top5"></div></div>
       <div class="card"><h3>Структура портфеля</h3><div style="height:230px"><canvas id="chStruct"></canvas></div><div id="structTbl" style="margin-top:16px"></div></div>
     </div>
     <div class="card" style="margin-top:14px"><h3>Стоимость портфеля и внесённые средства</h3><div style="height:320px"><canvas id="chLog"></canvas></div></div>
@@ -363,9 +363,18 @@ function metrics(){
     {k:'inc', label:'с даты открытия стратегии', d0:start},
     {k:'year', label:'за год', d0:iso(y)},
     {k:'ytd', label:'c начала года', d0:ytd}];
-  periods.forEach(p=>{ const v0=valueAt(p.d0)||P.log[0]; p.d0r=v0?v0.d:p.d0; p.port=twr(p.d0r,today); p.idx=idxRet(p.d0r,today); p.alpha=p.port-p.idx; });
+  // как в Snowball: доходность за период = прибыль / (стоимость на начало + взносы за период);
+  // индекс «покупается» на каждый взнос в день пополнения
+  const portV=d=>{ if(d>=today) return cur; const v=valueAt(d); return v?v.v:0; };
+  const idxUnits=d=>P.contrib.filter(c=>c.d<=d).reduce((s,c)=>s+c.a/idxAt(c.d),0);
+  const idxV=d=>idxUnits(d)*idxAt(d);
+  const mwr=(fn,d0,d1)=>{ const F=P.contrib.filter(c=>(!d0||c.d>d0)&&c.d<=d1).reduce((s,c)=>s+c.a,0);
+    const V0=d0?fn(d0):0, V1=fn(d1); return (V1-V0-F)/(V0+F)*100; };
+  periods.forEach(p=>{ const inc=p.k==='inc'; p.d0r=p.d0;
+    p.port=mwr(portV,inc?null:p.d0,today); p.idx=IDX?mwr(idxV,inc?null:p.d0,today):NaN; p.alpha=p.port-p.idx; });
+  const rep = IDX ? (()=>{ const v=idxV(today); const fl=P.contrib.map(c=>({d:c.d,a:-c.a})).concat([{d:today,a:v}]); return {v, profit:v-invested, xirr:xirr(fl)}; })() : null;
   const byKind=k=>P.pos.filter(x=>x.kind===k).reduce((s,x)=>s+x.val,0)/P.total*100;
-  return {today,invested,cur,profit,xirr:x,periods,eq:byKind('eq'),rub:byKind('rub'),yuan:byKind('yuan'),gold:byKind('gold')};
+  return {today,invested,cur,profit,xirr:x,periods,rep,eq:byKind('eq'),rub:byKind('rub'),yuan:byKind('yuan'),gold:byKind('gold')};
 }
 /* ===== индекс MCFTR с Мосбиржи ===== */
 async function loadIdx(from){
@@ -409,7 +418,8 @@ function renderOverview(){
    <div class="card kpi"><div class="l">Прибыль</div><div class="v ${cls(m.profit)}">${m.profit>0?'+':''}${fmt(m.profit)} ₽</div><div class="s">${fmtP(m.profit/m.invested*100)} к внесённому</div></div>
    <div class="card kpi"><div class="l">Среднегодовая доходность (XIRR)</div><div class="v ${cls(m.xirr)}">${fmtP(m.xirr)}</div><div class="s">акции ${fmt(m.eq,0)}% · деньги ${fmt(m.rub+m.yuan,0)}%</div></div>`;
   $('#perf').innerHTML=`<table><tr><th class="l">Период</th><th>Портфель</th><th>MCFTR</th><th>Альфа</th></tr>`+
-    m.periods.map(p=>`<tr><td class="l">${p.label}<div class="muted" style="font-size:11px">с ${ruDate(p.d0r)}</div></td><td>${badge(p.port,fmtP(p.port))}</td><td>${IDX?fmtP(p.idx):'<span class="muted">загрузка…</span>'}</td><td>${IDX?badge(p.alpha,fmtP(p.alpha)):'—'}</td></tr>`).join('')+'</table>';
+    m.periods.map(p=>`<tr><td class="l">${p.label}<div class="muted" style="font-size:11px">с ${ruDate(p.d0r)}</div></td><td>${badge(p.port,fmtP(p.port))}</td><td>${IDX?fmtP(p.idx):'<span class="muted">загрузка…</span>'}</td><td>${IDX?badge(p.alpha,fmtP(p.alpha)):'—'}</td></tr>`).join('')+'</table>'+
+    (m.rep?`<div class="note" style="margin-top:14px;font-size:14px;line-height:21px">Если бы каждый взнос в день пополнения вкладывался в индекс MCFTR, сейчас было бы <b>${fmt(m.rep.v)}&nbsp;₽</b> (прибыль ${m.rep.profit>0?'+':''}${fmt(m.rep.profit)}&nbsp;₽, XIRR ${fmtP(m.rep.xirr)}). Портфель: <b>${fmt(m.cur)}&nbsp;₽</b> (XIRR ${fmtP(m.xirr)}).</div>`:'');
   // топ-5 прибыльных закрытых сделок за последние 12 месяцев (без фондов рублёвой ликвидности)
   const yAgo=new Date(D(m.today)); yAgo.setFullYear(yAgo.getFullYear()-1); const y0=iso(yAgo);
   const grp={};
