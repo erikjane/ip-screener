@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 13:50",
+ "updated": "2026-11-23 14:00",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -15,27 +15,27 @@
   "start": "2026-11-21",
   "entry": 2355.51,
   "live": true,
-  "current": 0.05
+  "current": -0.3
  },
  "live": null,
- "total": 148.95,
- "live_return": -5.88,
- "maxdd": -15.5,
+ "total": 148.08,
+ "live_return": -6.2,
+ "maxdd": -15.8,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": -2.0
+  "2026": -2.3
  },
- "index_change": 9.1,
- "index": 2354.41,
+ "index_change": 9.5,
+ "index": 2362.62,
  "flips": [
   {
    "side": "short",
    "start": "2026-11-21",
    "entry": 2355.51,
    "live": true,
-   "current": 0.05
+   "current": -0.3
   },
   {
    "side": "long",
@@ -519,14 +519,14 @@
   {
    "date": "2026-11-23",
    "intraday": true,
-   "net": 27650,
-   "d1": -4258,
-   "d3": 22076,
-   "long": 110945,
-   "short": 83295,
-   "long_num": 4673,
-   "short_num": 3324,
-   "index": 2354.41,
+   "net": 27519,
+   "d1": -4389,
+   "d3": 21945,
+   "long": 110595,
+   "short": 83076,
+   "long_num": 4668,
+   "short_num": 3274,
+   "index": 2362.62,
    "pos": -1,
    "signal": "short"
   },
@@ -5970,7 +5970,7 @@
   ],
   [
    "2026-11-23",
-   148.95,
+   148.08,
    -1
   ]
  ],
@@ -6071,16 +6071,16 @@
     "result": -5.5
    }
   ],
-  "last_price": 233425,
-  "last_time": "13:50",
+  "last_price": 234100,
+  "last_time": "14:00",
   "contract_now": "MXZ6",
-  "current": 0.52,
-  "d3_now": 22076,
-  "snap_time": "13:50",
+  "current": 0.23,
+  "d3_now": 21945,
+  "snap_time": "14:00",
   "closed_return": -4.17,
-  "total_return": -3.67,
-  "updated": "2026-11-23 13:50",
+  "total_return": -3.95,
+  "updated": "2026-11-23 14:00",
   "blocked": null,
-  "d1_now": -4258
+  "d1_now": -4389
  }
 }
