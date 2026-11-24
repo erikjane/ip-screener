@@ -21,7 +21,7 @@
 
   let companies = {}, scan = [], market = null, current = null;
 
-  // ---------- синхронизация через приватный репозиторий GitHub ----------
+  // ---------- синхронизация через публичный репозиторий GitHub ----------
   const CFG = window.IP_CONFIG || {};
   const TK = "ipIdeasToken";
   let token = ""; try { token = localStorage.getItem(TK) || ""; } catch (e) {}
