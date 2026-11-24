@@ -177,7 +177,7 @@
    "code": "GZ",
    "side": "sell",
    "signal_date": "2026-11-17",
-   "status": "открыт",
+   "status": "трейлинг",
    "rel_pct": 11.7,
    "d_net": 53909,
    "d_net_mln": 637.2,
@@ -185,14 +185,17 @@
    "opened": "2026-11-18",
    "entry": 118.21,
    "stop": 106.74378,
-   "days": 5,
+   "days": 6,
    "stop_pct": -3.4,
    "best": 105.27,
    "last_price": 101.71,
    "current_pct": 13.96,
-   "processed": "2026-11-23",
+   "processed": "2026-11-24",
    "last_date": "2026-11-23",
-   "trailing": true
+   "trailing": true,
+   "closed": "2026-11-24",
+   "close_price": 107.38,
+   "result_pct": 9.16
   },
   {
    "ref_price": 0.5686,
@@ -207,7 +210,7 @@
    "code": "HY",
    "side": "buy",
    "signal_date": "2026-11-18",
-   "status": "открыт",
+   "status": "стоп",
    "rel_pct": -18.4,
    "d_net": -6587,
    "d_net_mln": -37.5,
@@ -215,13 +218,16 @@
    "opened": "2026-11-19",
    "entry": 0.568,
    "stop": 0.532825,
-   "days": 4,
+   "days": 5,
    "stop_pct": -6.2,
    "best": 0.5706,
    "last_price": 0.4981,
    "current_pct": -12.31,
-   "processed": "2026-11-23",
-   "last_date": "2026-11-23"
+   "processed": "2026-11-24",
+   "last_date": "2026-11-23",
+   "closed": "2026-11-24",
+   "close_price": 0.532825,
+   "result_pct": -6.19
   },
   {
    "ref_price": 293.37,
@@ -306,13 +312,13 @@
    "opened": "2026-11-20",
    "entry": 565.9,
    "stop": 589.096429,
-   "days": 3,
+   "days": 4,
    "stop_pct": -4.1,
-   "best": 554.5,
+   "best": 543.1,
    "last_price": 543.1,
    "current_pct": 4.03,
-   "processed": "2026-11-23",
-   "last_date": "2026-11-23"
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 2317.5,
@@ -397,13 +403,13 @@
    "opened": "2026-11-21",
    "entry": 288,
    "stop": 282.027857,
-   "days": 2,
+   "days": 3,
    "stop_pct": -2.1,
    "best": 289.66,
    "last_price": 285.3,
    "current_pct": -0.94,
-   "processed": "2026-11-23",
-   "last_date": "2026-11-23"
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 258.6,
@@ -426,13 +432,13 @@
    "opened": "2026-11-21",
    "entry": 259,
    "stop": 233.628571,
-   "days": 2,
+   "days": 3,
    "stop_pct": -9.8,
    "best": 289.1,
    "last_price": 266.6,
    "current_pct": 2.93,
-   "processed": "2026-11-23",
-   "last_date": "2026-11-23"
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 21.97,
@@ -455,13 +461,13 @@
    "opened": "2026-11-21",
    "entry": 21.87,
    "stop": 20.533929,
-   "days": 2,
+   "days": 3,
    "stop_pct": -6.1,
    "best": 22.22,
    "last_price": 21.49,
    "current_pct": -1.74,
-   "processed": "2026-11-23",
-   "last_date": "2026-11-23"
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 68.86,
@@ -488,7 +494,9 @@
    "stop_pct": -4.7,
    "best": 68.86,
    "last_price": 66.54,
-   "current_pct": -3.37
+   "current_pct": -3.37,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 16.125,
@@ -513,9 +521,11 @@
    "stop": 16.861071,
    "days": 0,
    "stop_pct": -4.4,
-   "best": 16.155,
+   "best": 15.665,
    "last_price": 15.665,
-   "current_pct": 3.03
+   "current_pct": 3.03,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 22.455,
@@ -540,9 +550,11 @@
    "stop": 23.558571,
    "days": 0,
    "stop_pct": -4.9,
-   "best": 22.455,
+   "best": 21.715,
    "last_price": 21.715,
-   "current_pct": 3.3
+   "current_pct": 3.3,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 290.02,
@@ -567,9 +579,11 @@
    "stop": 296.66,
    "days": 0,
    "stop_pct": -2.3,
-   "best": 290.06,
+   "best": 285.66,
    "last_price": 285.66,
-   "current_pct": 1.52
+   "current_pct": 1.52,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 485.9,
@@ -594,9 +608,11 @@
    "stop": 504.6875,
    "days": 0,
    "stop_pct": -3.9,
-   "best": 485.9,
+   "best": 472,
    "last_price": 472,
-   "current_pct": 2.86
+   "current_pct": 2.86,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   },
   {
    "ref_price": 160.08,
@@ -621,21 +637,23 @@
    "stop": 165.523929,
    "days": 0,
    "stop_pct": -3.4,
-   "best": 160.08,
+   "best": 157.95,
    "last_price": 157.95,
-   "current_pct": 1.33
+   "current_pct": 1.33,
+   "processed": "2026-11-24",
+   "last_date": "2026-11-24"
   }
  ],
- "updated_night": "2026-11-24 00:12",
+ "updated_night": "2026-11-25 00:14",
  "stats": {
   "total": 21,
-  "open": 12,
+  "open": 10,
   "pending": 0,
-  "closed": 9,
-  "win_rate": 33.3,
-  "avg_result": -0.44,
-  "стоп": 5,
-  "трейлинг": 4,
+  "closed": 11,
+  "win_rate": 36.4,
+  "avg_result": -0.09,
+  "стоп": 6,
+  "трейлинг": 5,
   "истёк": 0
  },
  "params": {
