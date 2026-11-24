@@ -188,8 +188,8 @@
    "days": 5,
    "stop_pct": -3.4,
    "best": 105.27,
-   "last_price": 102.74,
-   "current_pct": 13.09,
+   "last_price": 102.76,
+   "current_pct": 13.07,
    "processed": "2026-11-23",
    "last_date": "2026-11-23",
    "trailing": true
@@ -309,8 +309,8 @@
    "days": 3,
    "stop_pct": -4.1,
    "best": 554.5,
-   "last_price": 544.9,
-   "current_pct": 3.71,
+   "last_price": 545.4,
+   "current_pct": 3.62,
    "processed": "2026-11-23",
    "last_date": "2026-11-23"
   },
@@ -400,8 +400,8 @@
    "days": 2,
    "stop_pct": -2.1,
    "best": 289.66,
-   "last_price": 286.05,
-   "current_pct": -0.68,
+   "last_price": 286.13,
+   "current_pct": -0.65,
    "processed": "2026-11-23",
    "last_date": "2026-11-23"
   },
@@ -429,8 +429,8 @@
    "days": 2,
    "stop_pct": -9.8,
    "best": 289.1,
-   "last_price": 270.1,
-   "current_pct": 4.29,
+   "last_price": 269.4,
+   "current_pct": 4.02,
    "processed": "2026-11-23",
    "last_date": "2026-11-23"
   },
@@ -487,8 +487,8 @@
    "days": 0,
    "stop_pct": -4.7,
    "best": 68.86,
-   "last_price": 66.6,
-   "current_pct": -3.28
+   "last_price": 66.54,
+   "current_pct": -3.37
   },
   {
    "ref_price": 16.125,
@@ -541,8 +541,8 @@
    "days": 0,
    "stop_pct": -4.9,
    "best": 22.455,
-   "last_price": 21.65,
-   "current_pct": 3.58
+   "last_price": 21.66,
+   "current_pct": 3.54
   },
   {
    "ref_price": 290.02,
@@ -568,8 +568,8 @@
    "days": 0,
    "stop_pct": -2.3,
    "best": 290.06,
-   "last_price": 286.4,
-   "current_pct": 1.26
+   "last_price": 286.47,
+   "current_pct": 1.24
   },
   {
    "ref_price": 485.9,
@@ -595,8 +595,8 @@
    "days": 0,
    "stop_pct": -3.9,
    "best": 485.9,
-   "last_price": 474.55,
-   "current_pct": 2.34
+   "last_price": 474.2,
+   "current_pct": 2.41
   },
   {
    "ref_price": 160.08,
@@ -622,8 +622,8 @@
    "days": 0,
    "stop_pct": -3.4,
    "best": 160.08,
-   "last_price": 158.66,
-   "current_pct": 0.89
+   "last_price": 158.68,
+   "current_pct": 0.87
   }
  ],
  "updated_night": "2026-11-24 00:12",
