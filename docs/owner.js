@@ -2,7 +2,7 @@
 // Включается ссылкой с ?owner=1 (один раз ввести токен GitHub) — дальше кнопки «Закрыть» видны в этом браузере.
 // Закрытие дописывается в docs/data/manual.json репозитория, сервер применяет его в течение ~10 минут.
 (function () {
-  const REPO = "zaletovaea-ui/ip-screener", FILE = "docs/data/manual.json", TK = "ipOwnerToken";
+  const REPO = "erikjane/ip-screener", FILE = "docs/data/manual.json", TK = "ipOwnerToken";
   const url = new URL(location.href);
   let token = ""; try { token = localStorage.getItem(TK) || ""; } catch (e) {}
   const pending = new Set();
