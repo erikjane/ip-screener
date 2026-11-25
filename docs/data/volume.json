@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 12:02",
+ "updated": "2026-11-25 12:13",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -89,15 +89,15 @@
    "side": "sell",
    "ratio": 3.4,
    "buy_share": 51,
-   "change_pct": -4.13,
-   "range_pos": 53,
-   "price": 19.04,
-   "value_mln": 111.7,
-   "net_today_mln": 1.2,
-   "net30_mln": -99.2,
+   "change_pct": -4.23,
+   "range_pos": 52,
+   "price": 19.02,
+   "value_mln": 112.0,
+   "net_today_mln": 1.3,
+   "net30_mln": -99.1,
    "day_high": 19.9,
    "day_low": 18.06,
-   "time": "12:00",
+   "time": "12:10",
    "updated": "08:42",
    "first_time": "08:42",
    "first_price": 18.4,
@@ -149,18 +149,18 @@
    "ticker": "OZPH",
    "name": "Озон Фармацевтика",
    "side": null,
-   "ratio": 3.5,
-   "buy_share": 46,
-   "change_pct": -0.56,
-   "range_pos": 57,
-   "price": 49.28,
-   "value_mln": 73.6,
-   "net_today_mln": -6.5,
-   "net30_mln": 28.0,
+   "ratio": 3.8,
+   "buy_share": 48,
+   "change_pct": -0.12,
+   "range_pos": 78,
+   "price": 49.5,
+   "value_mln": 79.8,
+   "net_today_mln": -3.2,
+   "net30_mln": 31.3,
    "day_high": 49.72,
    "day_low": 48.7,
-   "time": "12:00",
-   "updated": "12:03"
+   "time": "12:10",
+   "updated": "12:13"
   },
   {
    "ticker": "UNAC",
@@ -171,13 +171,13 @@
    "change_pct": -2.1,
    "range_pos": 61,
    "price": 0.327,
-   "value_mln": 40.6,
+   "value_mln": 40.7,
    "net_today_mln": -1.8,
    "net30_mln": -75.2,
    "day_high": 0.334,
    "day_low": 0.316,
-   "time": "12:00",
-   "updated": "12:03"
+   "time": "12:10",
+   "updated": "12:13"
   },
   {
    "ticker": "UWGN",
@@ -185,16 +185,16 @@
    "side": null,
    "ratio": 3.4,
    "buy_share": 51,
-   "change_pct": -4.13,
-   "range_pos": 53,
-   "price": 19.04,
-   "value_mln": 111.7,
-   "net_today_mln": 1.2,
-   "net30_mln": -99.2,
+   "change_pct": -4.23,
+   "range_pos": 52,
+   "price": 19.02,
+   "value_mln": 112.0,
+   "net_today_mln": 1.3,
+   "net30_mln": -99.1,
    "day_high": 19.9,
    "day_low": 18.06,
-   "time": "12:00",
-   "updated": "12:03"
+   "time": "12:10",
+   "updated": "12:13"
   },
   {
    "ticker": "LENT",
@@ -211,7 +211,7 @@
    "day_high": 1865,
    "day_low": 1809.5,
    "time": "12:00",
-   "updated": "12:03"
+   "updated": "12:13"
   }
  ]
 }
