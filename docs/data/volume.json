@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 23:23",
+ "updated": "2026-11-25 23:33",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -151,33 +151,16 @@
    "side": null,
    "ratio": 3.6,
    "buy_share": 47,
-   "change_pct": -1.84,
-   "range_pos": 56,
-   "price": 886.8,
-   "value_mln": 1476.1,
-   "net_today_mln": -94.2,
-   "net30_mln": -51.0,
+   "change_pct": -1.77,
+   "range_pos": 57,
+   "price": 887.4,
+   "value_mln": 1488.4,
+   "net_today_mln": -87.5,
+   "net30_mln": -44.3,
    "day_high": 917.6,
    "day_low": 847.2,
-   "time": "23:20",
-   "updated": "23:23"
-  },
-  {
-   "ticker": "LENT",
-   "name": "Лента",
-   "side": null,
-   "ratio": 3.0,
-   "buy_share": 51,
-   "change_pct": 1.57,
-   "range_pos": 87,
-   "price": 1875.5,
-   "value_mln": 200.6,
-   "net_today_mln": 3.2,
-   "net30_mln": 13.2,
-   "day_high": 1885.5,
-   "day_low": 1809.5,
-   "time": "23:20",
-   "updated": "23:23"
+   "time": "23:30",
+   "updated": "23:33"
   }
  ]
 }
