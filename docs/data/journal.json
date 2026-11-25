@@ -327,8 +327,8 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-02)"
    ],
    "status": "открыт",
-   "current_pct": 1.97,
-   "last_price": 146.94,
+   "current_pct": 1.92,
+   "last_price": 147.02,
    "last_date": "2026-11-25",
    "days": 14,
    "opened_at": "2026-11-11 11:42",
@@ -560,8 +560,8 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": -0.65,
-   "last_price": 279.78,
+   "current_pct": -0.43,
+   "last_price": 280.4,
    "last_date": "2026-11-25",
    "days": 14,
    "last_time": "23:43"
@@ -896,8 +896,8 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": 0.0,
-   "last_price": 453.5,
+   "current_pct": 0.3,
+   "last_price": 454.85,
    "last_date": "2026-11-25",
    "days": 12,
    "last_time": "23:43"
@@ -1233,8 +1233,8 @@
     "рост +8.1% за день — первый за 20 дней, объём ×66.5"
    ],
    "status": "открыт",
-   "current_pct": -4.32,
-   "last_price": 697.6,
+   "current_pct": -4.43,
+   "last_price": 696.8,
    "last_date": "2026-11-25",
    "days": 7,
    "last_time": "23:43"
@@ -1260,8 +1260,8 @@
     "RSI вышел из перекупленности (70 → 53, 2026-11-19)"
    ],
    "status": "открыт",
-   "current_pct": 3.44,
-   "last_price": 44.85,
+   "current_pct": 3.34,
+   "last_price": 44.9,
    "last_date": "2026-11-25",
    "days": 6,
    "last_time": "23:43"
@@ -1598,8 +1598,8 @@
     "на поддержке 32.20 (2 касания, до уровня 0.5%)"
    ],
    "status": "открыт",
-   "current_pct": 2.91,
-   "last_price": 33.28,
+   "current_pct": 2.84,
+   "last_price": 33.26,
    "last_date": "2026-11-25",
    "days": 4,
    "last_time": "23:43"
@@ -1679,8 +1679,8 @@
     "пробой EMA200 2.69 вниз, 4 закрытия ниже"
    ],
    "status": "открыт",
-   "current_pct": 3.07,
-   "last_price": 2.585,
+   "current_pct": 2.96,
+   "last_price": 2.588,
    "last_date": "2026-11-25",
    "days": 2,
    "last_time": "23:43"
@@ -1792,8 +1792,8 @@
     "пробой сопротивления 48.31 2026-11-19 на объёме ×6.6, был ретест уровня"
    ],
    "status": "открыт",
-   "current_pct": 0.78,
-   "last_price": 48.84,
+   "current_pct": 0.54,
+   "last_price": 48.72,
    "last_date": "2026-11-25",
    "days": 2,
    "last_time": "23:43"
@@ -1819,8 +1819,8 @@
     "медвежья дивергенция (2026-11-13 → 2026-11-18)"
    ],
    "status": "открыт",
-   "current_pct": -1.58,
-   "last_price": 103.32,
+   "current_pct": -1.43,
+   "last_price": 103.16,
    "last_date": "2026-11-25",
    "days": 1,
    "last_time": "23:43"
@@ -1846,8 +1846,8 @@
     "пробой поддержки 298.70 2026-11-24 на объёме ×1.7"
    ],
    "status": "открыт",
-   "current_pct": -1.08,
-   "last_price": 295.9,
+   "current_pct": -0.97,
+   "last_price": 295.6,
    "last_date": "2026-11-25",
    "days": 1,
    "last_time": "23:43"
@@ -1872,16 +1872,64 @@
     "RSI вышел из перепроданности (28 → 32, 2026-11-22)"
    ],
    "status": "открыт",
-   "current_pct": 2.98,
-   "last_price": 242.57,
+   "current_pct": 3.16,
+   "last_price": 243.0,
    "last_date": "2026-11-25",
    "days": 1,
    "last_time": "23:43"
+  },
+  {
+   "id": "2026-11-25-FEES-buy-ta",
+   "strategy": "ta",
+   "ticker": "FEES",
+   "name": "Россети",
+   "side": "buy",
+   "opened": "2026-11-25",
+   "opened_at": "2026-11-25 23:59",
+   "entry": 0.059,
+   "stop": 0.0566,
+   "target": 0.0708,
+   "stop_pct": -4.1,
+   "target_pct": 20.0,
+   "rating": "⭐",
+   "comment": "EMA200 ↑",
+   "signals": [
+    "откат к EMA200 0.06 (+1.3%), наклон вверх — откат в восходящем тренде"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 0.059,
+   "last_date": "2026-11-25",
+   "days": 0
+  },
+  {
+   "id": "2026-11-25-LKOH-buy-ta",
+   "strategy": "ta",
+   "ticker": "LKOH",
+   "name": "ЛУКОЙЛ",
+   "side": "buy",
+   "opened": "2026-11-25",
+   "opened_at": "2026-11-25 23:59",
+   "entry": 5935.5,
+   "stop": 5805.1125,
+   "target": 6380.0,
+   "stop_pct": -2.2,
+   "target_pct": 7.5,
+   "rating": "⭐",
+   "comment": "поддержка + бычье поглощение",
+   "signals": [
+    "на поддержке 5863.75 (2 касания, до уровня 1.2%), свеча разворота: бычье поглощение"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 5935.5,
+   "last_date": "2026-11-25",
+   "days": 0
   }
  ],
  "stats": {
-  "total": 67,
-  "open": 15,
+  "total": 69,
+  "open": 17,
   "closed": 52,
   "win_rate": 15.4,
   "avg_result": -1.88,
@@ -1893,8 +1941,8 @@
   "win_rate_sell": 25.0,
   "by_strategy": {
    "ta": {
-    "total": 60,
-    "open": 12,
+    "total": 62,
+    "open": 14,
     "closed": 48,
     "win_rate": 16.7,
     "avg_result": -1.43,
@@ -1919,6 +1967,6 @@
    }
   }
  },
- "updated_utc": "2026-11-24 21:13",
+ "updated_utc": "2026-11-25 21:15",
  "updated_live": "2026-11-25 23:43"
 }
