@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 15:52",
+ "updated": "2026-11-25 16:03",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -151,33 +151,16 @@
    "side": null,
    "ratio": 3.9,
    "buy_share": 50,
-   "change_pct": 0.73,
-   "range_pos": 83,
-   "price": 1860,
-   "value_mln": 143.3,
-   "net_today_mln": -0.7,
-   "net30_mln": 9.3,
+   "change_pct": 0.79,
+   "range_pos": 85,
+   "price": 1861,
+   "value_mln": 146.3,
+   "net_today_mln": -0.4,
+   "net30_mln": 9.6,
    "day_high": 1870,
    "day_low": 1809.5,
-   "time": "15:50",
-   "updated": "15:53"
-  },
-  {
-   "ticker": "OZPH",
-   "name": "Озон Фармацевтика",
-   "side": null,
-   "ratio": 3.0,
-   "buy_share": 48,
-   "change_pct": -0.99,
-   "range_pos": 30,
-   "price": 49.07,
-   "value_mln": 121.2,
-   "net_today_mln": -5.6,
-   "net30_mln": 28.9,
-   "day_high": 49.94,
-   "day_low": 48.7,
-   "time": "15:50",
-   "updated": "15:53"
+   "time": "16:00",
+   "updated": "16:03"
   }
  ]
 }
