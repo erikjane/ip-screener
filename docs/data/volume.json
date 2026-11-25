@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 15:23",
+ "updated": "2026-11-25 15:32",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -149,35 +149,35 @@
    "ticker": "LENT",
    "name": "Лента",
    "side": null,
-   "ratio": 4.2,
+   "ratio": 3.9,
    "buy_share": 50,
-   "change_pct": 0.32,
-   "range_pos": 71,
-   "price": 1852.5,
-   "value_mln": 140.5,
+   "change_pct": 0.3,
+   "range_pos": 70,
+   "price": 1852,
+   "value_mln": 140.6,
    "net_today_mln": -0.4,
    "net30_mln": 9.5,
    "day_high": 1870,
    "day_low": 1809.5,
-   "time": "15:20",
-   "updated": "15:23"
+   "time": "15:30",
+   "updated": "15:33"
   },
   {
    "ticker": "OZPH",
    "name": "Озон Фармацевтика",
    "side": null,
-   "ratio": 3.1,
-   "buy_share": 47,
-   "change_pct": -0.81,
-   "range_pos": 37,
-   "price": 49.16,
-   "value_mln": 119.3,
-   "net_today_mln": -6.4,
-   "net30_mln": 28.1,
+   "ratio": 3.0,
+   "buy_share": 48,
+   "change_pct": -0.79,
+   "range_pos": 38,
+   "price": 49.17,
+   "value_mln": 120.0,
+   "net_today_mln": -5.1,
+   "net30_mln": 29.4,
    "day_high": 49.94,
    "day_low": 48.7,
-   "time": "15:20",
-   "updated": "15:23"
+   "time": "15:30",
+   "updated": "15:33"
   }
  ]
 }
