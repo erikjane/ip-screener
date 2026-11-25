@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25 07:02",
+ "updated": "2026-11-25 07:12",
  "params": {
   "window": 3,
   "threshold": 10000,
@@ -15,27 +15,27 @@
   "start": "2026-11-21",
   "entry": 2355.51,
   "live": true,
-  "current": 1.28
+  "current": 1.8
  },
  "live": null,
- "total": 151.93,
- "live_return": -4.75,
+ "total": 153.26,
+ "live_return": -4.25,
  "maxdd": -16.1,
  "by_year": {
   "2023": 10.8,
   "2024": 53.8,
   "2025": 49.0,
-  "2026": -0.8
+  "2026": -0.3
  },
- "index_change": 7.8,
- "index": 2325.33,
+ "index_change": 7.2,
+ "index": 2313.09,
  "flips": [
   {
    "side": "short",
    "start": "2026-11-21",
    "entry": 2355.51,
    "live": true,
-   "current": 1.28
+   "current": 1.8
   },
   {
    "side": "long",
@@ -517,6 +517,20 @@
  ],
  "rows": [
   {
+   "date": "2026-11-25",
+   "intraday": true,
+   "net": 23882,
+   "d1": -273,
+   "d3": -8026,
+   "long": 107594,
+   "short": 83712,
+   "long_num": 4287,
+   "short_num": 3272,
+   "index": 2313.09,
+   "pos": -1,
+   "signal": null
+  },
+  {
    "date": "2026-11-24",
    "intraday": false,
    "net": 24155,
@@ -919,20 +933,6 @@
    "long_num": 4134,
    "short_num": 3641,
    "index": 2391.72,
-   "pos": -1,
-   "signal": null
-  },
-  {
-   "date": "2026-10-14",
-   "intraday": false,
-   "net": -3864,
-   "d1": -2724,
-   "d3": 1468,
-   "long": 92641,
-   "short": 96505,
-   "long_num": 4128,
-   "short_num": 3750,
-   "index": 2413.68,
    "pos": -1,
    "signal": null
   }
@@ -5980,7 +5980,7 @@
   ],
   [
    "2026-11-25",
-   151.93,
+   153.26,
    -1
   ]
  ],
@@ -6081,16 +6081,16 @@
     "result": -5.5
    }
   ],
-  "last_price": 230375,
-  "last_time": "07:02",
+  "last_price": 228900,
+  "last_time": "07:12",
   "contract_now": "MXZ6",
-  "current": 1.82,
-  "d3_now": 16520,
-  "snap_time": "23:50",
+  "current": 2.45,
+  "d3_now": -8026,
+  "snap_time": "07:10",
   "closed_return": -4.17,
-  "total_return": -2.43,
-  "updated": "2026-11-25 07:02",
+  "total_return": -1.83,
+  "updated": "2026-11-25 07:12",
   "blocked": null,
-  "d1_now": 4456
+  "d1_now": -273
  }
 }
