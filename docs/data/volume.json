@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25 14:42",
+ "updated": "2026-11-25 14:52",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -151,16 +151,16 @@
    "side": null,
    "ratio": 4.0,
    "buy_share": 50,
-   "change_pct": 0.38,
-   "range_pos": 73,
-   "price": 1853.5,
-   "value_mln": 127.6,
-   "net_today_mln": -0.1,
+   "change_pct": 0.24,
+   "range_pos": 69,
+   "price": 1851,
+   "value_mln": 139.2,
+   "net_today_mln": -0.0,
    "net30_mln": 9.9,
    "day_high": 1870,
    "day_low": 1809.5,
-   "time": "14:40",
-   "updated": "14:43"
+   "time": "14:50",
+   "updated": "14:53"
   },
   {
    "ticker": "OZPH",
@@ -168,16 +168,16 @@
    "side": null,
    "ratio": 3.1,
    "buy_share": 48,
-   "change_pct": -0.71,
-   "range_pos": 41,
-   "price": 49.21,
-   "value_mln": 113.6,
-   "net_today_mln": -5.3,
-   "net30_mln": 29.2,
+   "change_pct": -0.77,
+   "range_pos": 39,
+   "price": 49.18,
+   "value_mln": 114.6,
+   "net_today_mln": -5.7,
+   "net30_mln": 28.8,
    "day_high": 49.94,
    "day_low": 48.7,
-   "time": "14:40",
-   "updated": "14:43"
+   "time": "14:50",
+   "updated": "14:53"
   }
  ]
 }
