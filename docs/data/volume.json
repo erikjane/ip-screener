@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 10:33",
+ "updated": "2026-11-26 10:44",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -27,22 +27,57 @@
    "ticker": "SIBN",
    "name": "Газпром нефть",
    "side": "buy",
-   "ratio": 3.2,
-   "buy_share": 57,
-   "change_pct": 1.53,
-   "range_pos": 64,
-   "price": 495.5,
-   "value_mln": 258.7,
-   "net_today_mln": 33.4,
-   "net30_mln": -481.9,
+   "ratio": 3.0,
+   "buy_share": 58,
+   "change_pct": 1.69,
+   "range_pos": 71,
+   "price": 496.3,
+   "value_mln": 279.0,
+   "net_today_mln": 43.6,
+   "net30_mln": -471.7,
    "day_high": 499.7,
    "day_low": 488.05,
-   "time": "10:20",
+   "time": "10:40",
    "updated": "08:53",
    "first_time": "08:53",
    "first_price": 496.9,
    "first_ratio": 3.6
   }
  ],
- "anomalies": []
+ "anomalies": [
+  {
+   "ticker": "APTK",
+   "name": "Аптеки 36,6",
+   "side": null,
+   "ratio": 7.5,
+   "buy_share": 54,
+   "change_pct": 3.68,
+   "range_pos": 58,
+   "price": 6.486,
+   "value_mln": 30.4,
+   "net_today_mln": 2.7,
+   "net30_mln": -24.3,
+   "day_high": 6.646,
+   "day_low": 6.266,
+   "time": "10:40",
+   "updated": "10:44"
+  },
+  {
+   "ticker": "SIBN",
+   "name": "Газпром нефть",
+   "side": null,
+   "ratio": 3.0,
+   "buy_share": 58,
+   "change_pct": 1.69,
+   "range_pos": 71,
+   "price": 496.3,
+   "value_mln": 279.0,
+   "net_today_mln": 43.6,
+   "net30_mln": -471.7,
+   "day_high": 499.7,
+   "day_low": 488.05,
+   "time": "10:40",
+   "updated": "10:44"
+  }
+ ]
 }
