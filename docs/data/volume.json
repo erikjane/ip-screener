@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 08:43",
+ "updated": "2026-11-26 08:53",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -22,24 +22,62 @@
   "cooldown": 7
  },
  "norm_days": 25,
- "signals": [],
+ "signals": [
+  {
+   "ticker": "SIBN",
+   "name": "Газпром нефть",
+   "side": "buy",
+   "ratio": 3.6,
+   "buy_share": 58,
+   "change_pct": 1.81,
+   "range_pos": 85,
+   "price": 496.9,
+   "value_mln": 161.4,
+   "net_today_mln": 26.0,
+   "net30_mln": -489.4,
+   "day_high": 498.5,
+   "day_low": 488.05,
+   "time": "08:50",
+   "updated": "08:53",
+   "first_time": "08:53",
+   "first_price": 496.9,
+   "first_ratio": 3.6
+  }
+ ],
  "anomalies": [
   {
    "ticker": "SIBN",
    "name": "Газпром нефть",
-   "side": null,
-   "ratio": 3.4,
-   "buy_share": 57,
-   "change_pct": 1.73,
-   "range_pos": 81,
-   "price": 496.5,
-   "value_mln": 150.4,
-   "net_today_mln": 20.0,
-   "net30_mln": -495.3,
+   "side": "buy",
+   "ratio": 3.6,
+   "buy_share": 58,
+   "change_pct": 1.81,
+   "range_pos": 85,
+   "price": 496.9,
+   "value_mln": 161.4,
+   "net_today_mln": 26.0,
+   "net30_mln": -489.4,
    "day_high": 498.5,
    "day_low": 488.05,
-   "time": "08:40",
-   "updated": "08:43"
+   "time": "08:50",
+   "updated": "08:53"
+  },
+  {
+   "ticker": "RNFT",
+   "name": "РуссНефть",
+   "side": null,
+   "ratio": 3.0,
+   "buy_share": 60,
+   "change_pct": 0.62,
+   "range_pos": 73,
+   "price": 72.55,
+   "value_mln": 54.3,
+   "net_today_mln": 9.9,
+   "net30_mln": -44.5,
+   "day_high": 72.9,
+   "day_low": 71.6,
+   "time": "08:50",
+   "updated": "08:53"
   }
  ]
 }
