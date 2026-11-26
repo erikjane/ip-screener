@@ -95,15 +95,15 @@
    "result": -5.5
   }
  ],
- "last_price": 233300,
- "last_time": "07:03",
+ "last_price": 233650,
+ "last_time": "07:13",
  "contract_now": "MXZ6",
- "current": 0.58,
- "d3_now": -8536,
- "snap_time": "23:50",
+ "current": 0.43,
+ "d3_now": 3387,
+ "snap_time": "07:10",
  "closed_return": -4.17,
- "total_return": -3.62,
- "updated": "2026-11-26 07:03",
+ "total_return": -3.76,
+ "updated": "2026-11-26 07:13",
  "blocked": null,
- "d1_now": -783
+ "d1_now": -286
 }
