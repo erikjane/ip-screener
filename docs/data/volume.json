@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 08:23",
+ "updated": "2026-11-26 08:33",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -23,23 +23,5 @@
  },
  "norm_days": 25,
  "signals": [],
- "anomalies": [
-  {
-   "ticker": "SIBN",
-   "name": "Газпром нефть",
-   "side": null,
-   "ratio": 3.3,
-   "buy_share": 52,
-   "change_pct": 1.4,
-   "range_pos": 77,
-   "price": 494.9,
-   "value_mln": 110.9,
-   "net_today_mln": 5.2,
-   "net30_mln": -510.1,
-   "day_high": 496.9,
-   "day_low": 488.05,
-   "time": "08:20",
-   "updated": "08:23"
-  }
- ]
+ "anomalies": []
 }
