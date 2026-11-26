@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 11:14",
+ "updated": "2026-11-26 11:24",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -49,18 +49,18 @@
    "ticker": "APTK",
    "name": "Аптеки 36,6",
    "side": null,
-   "ratio": 6.7,
+   "ratio": 6.4,
    "buy_share": 54,
-   "change_pct": 3.48,
-   "range_pos": 55,
-   "price": 6.474,
-   "value_mln": 30.8,
+   "change_pct": 3.93,
+   "range_pos": 62,
+   "price": 6.502,
+   "value_mln": 30.9,
    "net_today_mln": 2.5,
-   "net30_mln": -24.5,
+   "net30_mln": -24.4,
    "day_high": 6.646,
    "day_low": 6.266,
-   "time": "11:10",
-   "updated": "11:14"
+   "time": "11:20",
+   "updated": "11:24"
   }
  ]
 }
