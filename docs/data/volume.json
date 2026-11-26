@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 20:34",
+ "updated": "2026-11-26 20:44",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -51,16 +51,16 @@
    "side": null,
    "ratio": 7.8,
    "buy_share": 49,
-   "change_pct": 4.16,
-   "range_pos": 66,
-   "price": 6.516,
+   "change_pct": 4.12,
+   "range_pos": 65,
+   "price": 6.514,
    "value_mln": 73.6,
    "net_today_mln": -1.1,
    "net30_mln": -28.1,
    "day_high": 6.646,
    "day_low": 6.266,
-   "time": "20:30",
-   "updated": "20:34"
+   "time": "20:40",
+   "updated": "20:44"
   }
  ]
 }
