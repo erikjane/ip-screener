@@ -327,12 +327,12 @@
     "медвежья дивергенция (2026-10-29 → 2026-11-02)"
    ],
    "status": "открыт",
-   "current_pct": 1.31,
-   "last_price": 147.94,
+   "current_pct": 1.07,
+   "last_price": 148.3,
    "last_date": "2026-11-26",
    "days": 15,
    "opened_at": "2026-11-11 11:42",
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-11-HEAD-sell-ta",
@@ -560,11 +560,11 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": -0.65,
-   "last_price": 279.78,
+   "current_pct": -0.56,
+   "last_price": 280.04,
    "last_date": "2026-11-26",
    "days": 15,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-11-UGLD-buy-ta",
@@ -871,11 +871,11 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.2"
    ],
    "status": "открыт",
-   "current_pct": -4.01,
-   "last_price": 277.8,
+   "current_pct": -4.42,
+   "last_price": 276.6,
    "last_date": "2026-11-26",
    "days": 13,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-13-PRMD-buy-momentum",
@@ -896,11 +896,11 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": 0.61,
-   "last_price": 456.25,
+   "current_pct": 0.63,
+   "last_price": 456.35,
    "last_date": "2026-11-26",
    "days": 13,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-13-ENPG-buy-momentum",
@@ -1233,11 +1233,11 @@
     "рост +8.1% за день — первый за 20 дней, объём ×66.5"
    ],
    "status": "открыт",
-   "current_pct": -4.69,
-   "last_price": 694.9,
+   "current_pct": -4.61,
+   "last_price": 695.5,
    "last_date": "2026-11-26",
    "days": 8,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-19-RTKMP-sell-ta",
@@ -1260,11 +1260,11 @@
     "RSI вышел из перекупленности (70 → 53, 2026-11-19)"
    ],
    "status": "открыт",
-   "current_pct": 3.55,
-   "last_price": 44.8,
+   "current_pct": 3.44,
+   "last_price": 44.85,
    "last_date": "2026-11-26",
    "days": 7,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-19-IRAO-buy-ta",
@@ -1436,7 +1436,7 @@
    "last_price": 123.45,
    "last_date": "2026-11-26",
    "days": 6,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-20-DATA-buy-ta",
@@ -1457,11 +1457,11 @@
     "на поддержке 93.10 (2 касания, до уровня 1.3%)"
    ],
    "status": "открыт",
-   "current_pct": 5.15,
-   "last_price": 99.14,
+   "current_pct": 5.3,
+   "last_price": 99.28,
    "last_date": "2026-11-26",
    "days": 6,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-20-PHOR-buy-ta",
@@ -1598,11 +1598,11 @@
     "на поддержке 32.20 (2 касания, до уровня 0.5%)"
    ],
    "status": "открыт",
-   "current_pct": 3.71,
-   "last_price": 33.54,
+   "current_pct": 3.62,
+   "last_price": 33.51,
    "last_date": "2026-11-26",
    "days": 5,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-21-TRNFP-buy-ta",
@@ -1623,11 +1623,11 @@
     "на поддержке 1021.50 (2 касания, до уровня 1.9%), свеча разворота: молот"
    ],
    "status": "открыт",
-   "current_pct": 0.31,
-   "last_price": 1044.0,
+   "current_pct": 0.23,
+   "last_price": 1043.2,
    "last_date": "2026-11-26",
    "days": 5,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-23-TATNP-sell-ta",
@@ -1679,11 +1679,11 @@
     "пробой EMA200 2.69 вниз, 4 закрытия ниже"
    ],
    "status": "открыт",
-   "current_pct": 2.83,
-   "last_price": 2.5915,
+   "current_pct": 2.91,
+   "last_price": 2.5895,
    "last_date": "2026-11-26",
    "days": 3,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-23-ASTR-buy-ta",
@@ -1792,11 +1792,11 @@
     "пробой сопротивления 48.31 2026-11-19 на объёме ×6.6, был ретест уровня"
    ],
    "status": "открыт",
-   "current_pct": 0.91,
-   "last_price": 48.9,
+   "current_pct": 0.8,
+   "last_price": 48.85,
    "last_date": "2026-11-26",
    "days": 3,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-24-GAZP-sell-ta",
@@ -1819,11 +1819,11 @@
     "медвежья дивергенция (2026-11-13 → 2026-11-18)"
    ],
    "status": "открыт",
-   "current_pct": -1.23,
-   "last_price": 102.96,
+   "current_pct": -1.31,
+   "last_price": 103.04,
    "last_date": "2026-11-26",
    "days": 2,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-24-ENPG-sell-ta",
@@ -1846,11 +1846,11 @@
     "пробой поддержки 298.70 2026-11-24 на объёме ×1.7"
    ],
    "status": "открыт",
-   "current_pct": -1.28,
-   "last_price": 296.5,
+   "current_pct": -1.18,
+   "last_price": 296.2,
    "last_date": "2026-11-26",
    "days": 2,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-24-BSPB-buy-ta",
@@ -1872,11 +1872,11 @@
     "RSI вышел из перепроданности (28 → 32, 2026-11-22)"
    ],
    "status": "открыт",
-   "current_pct": 2.15,
-   "last_price": 240.63,
+   "current_pct": 2.25,
+   "last_price": 240.85,
    "last_date": "2026-11-26",
    "days": 2,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-25-FEES-buy-ta",
@@ -1897,11 +1897,11 @@
     "откат к EMA200 0.06 (+1.3%), наклон вверх — откат в восходящем тренде"
    ],
    "status": "открыт",
-   "current_pct": -0.2,
-   "last_price": 0.05888,
+   "current_pct": -0.31,
+   "last_price": 0.05882,
    "last_date": "2026-11-26",
    "days": 1,
-   "last_time": "08:03"
+   "last_time": "08:13"
   },
   {
    "id": "2026-11-25-LKOH-buy-ta",
@@ -1922,11 +1922,11 @@
     "на поддержке 5863.75 (2 касания, до уровня 1.2%), свеча разворота: бычье поглощение"
    ],
    "status": "открыт",
-   "current_pct": -0.4,
-   "last_price": 5912.0,
+   "current_pct": -0.32,
+   "last_price": 5916.5,
    "last_date": "2026-11-26",
    "days": 1,
-   "last_time": "08:03"
+   "last_time": "08:13"
   }
  ],
  "stats": {
@@ -1970,5 +1970,5 @@
   }
  },
  "updated_utc": "2026-11-25 21:15",
- "updated_live": "2026-11-26 08:03"
+ "updated_live": "2026-11-26 08:13"
 }
