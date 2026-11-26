@@ -1,6 +1,6 @@
 {
  "date": "2026-11-26",
- "updated": "2026-11-26 11:43",
+ "updated": "2026-11-26 11:54",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -50,17 +50,17 @@
    "name": "Аптеки 36,6",
    "side": null,
    "ratio": 6.8,
-   "buy_share": 56,
-   "change_pct": 4.67,
-   "range_pos": 74,
-   "price": 6.548,
-   "value_mln": 36.7,
-   "net_today_mln": 4.0,
-   "net30_mln": -23.0,
+   "buy_share": 55,
+   "change_pct": 4.25,
+   "range_pos": 67,
+   "price": 6.522,
+   "value_mln": 37.2,
+   "net_today_mln": 3.5,
+   "net30_mln": -23.5,
    "day_high": 6.646,
    "day_low": 6.266,
-   "time": "11:40",
-   "updated": "11:44"
+   "time": "11:50",
+   "updated": "11:54"
   }
  ]
 }
