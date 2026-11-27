@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 07:04",
+ "updated": "2026-11-27 07:14",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -23,5 +23,40 @@
  },
  "norm_days": 25,
  "signals": [],
- "anomalies": []
+ "anomalies": [
+  {
+   "ticker": "CNRU",
+   "name": "Циан",
+   "side": null,
+   "ratio": 18.3,
+   "buy_share": 41,
+   "change_pct": -1.51,
+   "range_pos": 67,
+   "price": 886.6,
+   "value_mln": 109.8,
+   "net_today_mln": -19.2,
+   "net30_mln": 38.3,
+   "day_high": 897.4,
+   "day_low": 864.2,
+   "time": "07:10",
+   "updated": "07:14"
+  },
+  {
+   "ticker": "LSRG",
+   "name": "ЛСР",
+   "side": null,
+   "ratio": 10.8,
+   "buy_share": 58,
+   "change_pct": 2.96,
+   "range_pos": 45,
+   "price": 826.8,
+   "value_mln": 74.3,
+   "net_today_mln": 9.4,
+   "net30_mln": -304.0,
+   "day_high": 859.8,
+   "day_low": 800.2,
+   "time": "07:10",
+   "updated": "07:14"
+  }
+ ]
 }
