@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 10:35",
+ "updated": "2026-11-27 10:45",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -28,18 +28,18 @@
    "ticker": "CNRU",
    "name": "Циан",
    "side": null,
-   "ratio": 20.3,
+   "ratio": 28.5,
    "buy_share": 48,
-   "change_pct": -5,
-   "range_pos": 6,
-   "price": 855.2,
-   "value_mln": 1425.3,
-   "net_today_mln": -34.8,
-   "net30_mln": 22.7,
+   "change_pct": -5.82,
+   "range_pos": 4,
+   "price": 847.8,
+   "value_mln": 1645.1,
+   "net_today_mln": -76.5,
+   "net30_mln": -19.0,
    "day_high": 903.8,
-   "day_low": 852,
-   "time": "10:30",
-   "updated": "10:35"
+   "day_low": 845.2,
+   "time": "10:40",
+   "updated": "10:45"
   }
  ]
 }
