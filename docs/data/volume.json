@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 11:15",
+ "updated": "2026-11-27 11:25",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -22,24 +22,62 @@
   "cooldown": 7
  },
  "norm_days": 25,
- "signals": [],
+ "signals": [
+  {
+   "ticker": "DIAS",
+   "name": "Диасофт",
+   "side": "buy",
+   "ratio": 6.0,
+   "buy_share": 65,
+   "change_pct": 2.09,
+   "range_pos": 77,
+   "price": 1267.5,
+   "value_mln": 30.5,
+   "net_today_mln": 9.2,
+   "net30_mln": 4.0,
+   "day_high": 1276.5,
+   "day_low": 1237,
+   "time": "11:20",
+   "updated": "11:25",
+   "first_time": "11:25",
+   "first_price": 1267.5,
+   "first_ratio": 6.0
+  }
+ ],
  "anomalies": [
   {
    "ticker": "CNRU",
    "name": "Циан",
    "side": null,
-   "ratio": 31.9,
+   "ratio": 26.9,
    "buy_share": 52,
-   "change_pct": -5.44,
-   "range_pos": 15,
-   "price": 851.2,
-   "value_mln": 2313.8,
-   "net_today_mln": 92.1,
-   "net30_mln": 149.6,
+   "change_pct": -5.58,
+   "range_pos": 13,
+   "price": 850,
+   "value_mln": 2346.3,
+   "net_today_mln": 102.8,
+   "net30_mln": 160.3,
    "day_high": 903.8,
    "day_low": 842.2,
-   "time": "11:10",
-   "updated": "11:15"
+   "time": "11:20",
+   "updated": "11:25"
+  },
+  {
+   "ticker": "DIAS",
+   "name": "Диасофт",
+   "side": "buy",
+   "ratio": 6.0,
+   "buy_share": 65,
+   "change_pct": 2.09,
+   "range_pos": 77,
+   "price": 1267.5,
+   "value_mln": 30.5,
+   "net_today_mln": 9.2,
+   "net30_mln": 4.0,
+   "day_high": 1276.5,
+   "day_low": 1237,
+   "time": "11:20",
+   "updated": "11:25"
   }
  ]
 }
