@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 22:45",
+ "updated": "2026-11-27 22:55",
  "source": "AlgoPack tradestats",
  "params": {
   "norm_days": 20,
@@ -37,7 +37,7 @@
    "net30_mln": 7.3,
    "day_high": 1325.5,
    "day_low": 1237,
-   "time": "22:45",
+   "time": "22:50",
    "updated": "11:25",
    "first_time": "11:25",
    "first_price": 1267.5,
@@ -49,15 +49,15 @@
    "side": "sell",
    "ratio": 3.1,
    "buy_share": 44,
-   "change_pct": -2.04,
-   "range_pos": 27,
-   "price": 681.4,
+   "change_pct": -2.06,
+   "range_pos": 26,
+   "price": 681.3,
    "value_mln": 50.3,
    "net_today_mln": -5.9,
    "net30_mln": 15.9,
    "day_high": 702,
    "day_low": 673.9,
-   "time": "22:45",
+   "time": "22:55",
    "updated": "17:05",
    "first_time": "17:05",
    "first_price": 680.9,
@@ -69,18 +69,18 @@
    "ticker": "CNRU",
    "name": "Циан",
    "side": null,
-   "ratio": 10.5,
+   "ratio": 10.6,
    "buy_share": 49,
-   "change_pct": -10.42,
-   "range_pos": 5,
-   "price": 806.4,
-   "value_mln": 5465.9,
-   "net_today_mln": -70.2,
-   "net30_mln": -12.7,
+   "change_pct": -10.26,
+   "range_pos": 7,
+   "price": 807.8,
+   "value_mln": 5487.3,
+   "net_today_mln": -69.7,
+   "net30_mln": -12.2,
    "day_high": 903.8,
    "day_low": 801,
-   "time": "22:45",
-   "updated": "22:45"
+   "time": "22:55",
+   "updated": "22:55"
   },
   {
    "ticker": "DIAS",
@@ -96,8 +96,8 @@
    "net30_mln": 7.3,
    "day_high": 1325.5,
    "day_low": 1237,
-   "time": "22:45",
-   "updated": "22:45"
+   "time": "22:50",
+   "updated": "22:55"
   },
   {
    "ticker": "LEAS",
@@ -105,16 +105,16 @@
    "side": null,
    "ratio": 3.1,
    "buy_share": 44,
-   "change_pct": -2.04,
-   "range_pos": 27,
-   "price": 681.4,
+   "change_pct": -2.06,
+   "range_pos": 26,
+   "price": 681.3,
    "value_mln": 50.3,
    "net_today_mln": -5.9,
    "net30_mln": 15.9,
    "day_high": 702,
    "day_low": 673.9,
-   "time": "22:45",
-   "updated": "22:45"
+   "time": "22:55",
+   "updated": "22:55"
   }
  ]
 }
