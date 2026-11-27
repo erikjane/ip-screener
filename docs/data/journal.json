@@ -560,8 +560,8 @@
     "пробой сопротивления 275.50 2026-11-11 на объёме ×2.6"
    ],
    "status": "открыт",
-   "current_pct": 1.2,
-   "last_price": 285.0,
+   "current_pct": 1.21,
+   "last_price": 285.02,
    "last_date": "2026-11-27",
    "days": 16,
    "last_time": "23:45"
@@ -871,8 +871,8 @@
     "рост +6.6% за день — первый за 20 дней, объём ×6.2"
    ],
    "status": "открыт",
-   "current_pct": -3.94,
-   "last_price": 278.0,
+   "current_pct": -4.08,
+   "last_price": 277.6,
    "last_date": "2026-11-27",
    "days": 14,
    "last_time": "23:45"
@@ -896,8 +896,8 @@
     "рост +5.2% за день — первый за 20 дней, объём ×8.2"
    ],
    "status": "открыт",
-   "current_pct": -0.46,
-   "last_price": 451.4,
+   "current_pct": -0.33,
+   "last_price": 452.0,
    "last_date": "2026-11-27",
    "days": 14,
    "last_time": "23:45"
@@ -1260,8 +1260,8 @@
     "RSI вышел из перекупленности (70 → 53, 2026-11-19)"
    ],
    "status": "открыт",
-   "current_pct": 4.95,
-   "last_price": 44.15,
+   "current_pct": 5.06,
+   "last_price": 44.1,
    "last_date": "2026-11-27",
    "days": 8,
    "last_time": "23:45"
@@ -1460,8 +1460,8 @@
     "на поддержке 93.10 (2 касания, до уровня 1.3%)"
    ],
    "status": "открыт",
-   "current_pct": 4.71,
-   "last_price": 98.72,
+   "current_pct": 4.67,
+   "last_price": 98.68,
    "last_date": "2026-11-27",
    "days": 7,
    "last_time": "23:45"
@@ -1601,8 +1601,8 @@
     "на поддержке 32.20 (2 касания, до уровня 0.5%)"
    ],
    "status": "открыт",
-   "current_pct": 3.43,
-   "last_price": 33.45,
+   "current_pct": 3.25,
+   "last_price": 33.39,
    "last_date": "2026-11-27",
    "days": 6,
    "last_time": "23:45"
@@ -1626,8 +1626,8 @@
     "на поддержке 1021.50 (2 касания, до уровня 1.9%), свеча разворота: молот"
    ],
    "status": "открыт",
-   "current_pct": -0.56,
-   "last_price": 1035.0,
+   "current_pct": -0.46,
+   "last_price": 1036.0,
    "last_date": "2026-11-27",
    "days": 6,
    "last_time": "23:45"
@@ -1682,8 +1682,8 @@
     "пробой EMA200 2.69 вниз, 4 закрытия ниже"
    ],
    "status": "открыт",
-   "current_pct": 6.02,
-   "last_price": 2.5065,
+   "current_pct": 5.89,
+   "last_price": 2.51,
    "last_date": "2026-11-27",
    "days": 4,
    "last_time": "23:45"
@@ -1855,8 +1855,8 @@
     "пробой поддержки 298.70 2026-11-24 на объёме ×1.7"
    ],
    "status": "открыт",
-   "current_pct": -2.24,
-   "last_price": 299.3,
+   "current_pct": -2.46,
+   "last_price": 299.95,
    "last_date": "2026-11-27",
    "days": 3,
    "last_time": "23:45"
@@ -1881,8 +1881,8 @@
     "RSI вышел из перепроданности (28 → 32, 2026-11-22)"
    ],
    "status": "открыт",
-   "current_pct": 3.19,
-   "last_price": 243.07,
+   "current_pct": 3.0,
+   "last_price": 242.63,
    "last_date": "2026-11-27",
    "days": 3,
    "last_time": "23:45"
@@ -1934,8 +1934,8 @@
     "на поддержке 5863.75 (2 касания, до уровня 1.2%), свеча разворота: бычье поглощение"
    ],
    "status": "открыт",
-   "current_pct": -0.35,
-   "last_price": 5914.5,
+   "current_pct": -0.37,
+   "last_price": 5913.5,
    "last_date": "2026-11-27",
    "days": 2,
    "last_time": "23:45"
@@ -1960,8 +1960,8 @@
     "RSI вышел из перепроданности (26 → 36, 2026-11-25)"
    ],
    "status": "открыт",
-   "current_pct": 1.86,
-   "last_price": 634.4,
+   "current_pct": 2.02,
+   "last_price": 635.4,
    "last_date": "2026-11-27",
    "days": 1,
    "last_time": "23:45"
@@ -1986,16 +1986,66 @@
     "RSI вышел из перепроданности (29 → 33, 2026-11-25)"
    ],
    "status": "открыт",
-   "current_pct": 2.48,
-   "last_price": 40.09,
+   "current_pct": 2.51,
+   "last_price": 40.1,
    "last_date": "2026-11-27",
    "days": 1,
    "last_time": "23:45"
+  },
+  {
+   "id": "2026-11-27-TATN-buy-ta",
+   "strategy": "ta",
+   "ticker": "TATN",
+   "name": "Татнфт 3ао",
+   "side": "buy",
+   "opened": "2026-11-27",
+   "opened_at": "2026-11-27 23:59",
+   "entry": 561.9,
+   "stop": 553.6575,
+   "target": 615.85,
+   "stop_pct": -1.5,
+   "target_pct": 9.6,
+   "rating": "⭐⭐",
+   "comment": "поддержка + разворот RSI",
+   "signals": [
+    "на поддержке 559.25 (2 касания, до уровня 0.5%)",
+    "RSI вышел из перепроданности (26 → 33, 2026-11-25)"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 561.9,
+   "last_date": "2026-11-27",
+   "days": 0
+  },
+  {
+   "id": "2026-11-27-NVTK-buy-ta",
+   "strategy": "ta",
+   "ticker": "NVTK",
+   "name": "Новатэк ао",
+   "side": "buy",
+   "opened": "2026-11-27",
+   "opened_at": "2026-11-27 23:59",
+   "entry": 1017.8,
+   "stop": 1005.0975,
+   "target": 1094.4667,
+   "stop_pct": -1.2,
+   "target_pct": 7.5,
+   "rating": "⭐⭐",
+   "comment": "поддержка + разворот RSI",
+   "signals": [
+    "на поддержке 1015.25 (2 касания, до уровня 0.3%)",
+    "RSI вышел из перепроданности (29 → 35, 2026-11-25)"
+   ],
+   "status": "открыт",
+   "current_pct": 0.0,
+   "last_price": 1017.8,
+   "last_date": "2026-11-27",
+   "days": 0
   }
  ],
  "stats": {
-  "total": 71,
-  "open": 15,
+  "total": 73,
+  "open": 17,
   "closed": 56,
   "win_rate": 14.3,
   "avg_result": -1.94,
@@ -2007,8 +2057,8 @@
   "win_rate_sell": 22.7,
   "by_strategy": {
    "ta": {
-    "total": 64,
-    "open": 12,
+    "total": 66,
+    "open": 14,
     "closed": 52,
     "win_rate": 15.4,
     "avg_result": -1.52,
@@ -2033,6 +2083,6 @@
    }
   }
  },
- "updated_utc": "2026-11-26 21:15",
+ "updated_utc": "2026-11-27 21:07",
  "updated_live": "2026-11-27 23:45"
 }
